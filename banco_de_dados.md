@@ -1,7 +1,8 @@
 # Sumário
 - [Introdução](#introdução)
 - [Comandos ANSI](#comandos-ansi)
-- [Comandos DDL (Data Definition Language)](#comandos-dml-data-manipulation-language)
+- [Comandos DML (Data Manipulation Language)](#comandos-dml-data-manipulation-language)
+- [Comandos DCL (Data Control Language)](#Comandos-DCL-(Data-Control-Language))
 
 ### Introdução
 Revisão dos comandos SQL
