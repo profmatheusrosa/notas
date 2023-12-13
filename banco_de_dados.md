@@ -1,8 +1,13 @@
 # Sumário
 - [Introdução](#introdução)
+- [Manipulação de Strings](#manipulação-de-strings)
+- [Manipulação de Números](#manipulação-de-números)
+- [Manipulação de Datas](#manipulação-de-datas)
 - [Comandos ANSI](#comandos-ansi)
 - [Comandos DML (Data Manipulation Language)](#comandos-dml-data-manipulation-language)
-- [Comandos DCL (Data Control Language)](#Comandos-DCL-(Data-Control-Language))
+- [Comandos DDL (Data Definition Language)]
+- [Comandos DTL (Data Transaction Language)]
+- [Comandos DCL (Data Control Language)](#comandos-dcl-data-control-language)
 
 ### Introdução
 Revisão dos comandos SQL
@@ -64,6 +69,33 @@ Revisão dos comandos SQL
 | **Posição**       | `POSITION(substring IN string)`       | `POSITION(substring IN string)`                | `CHARINDEX(substring, string)`                |
 | **Formatar Data** | `DATE_FORMAT(date, format)`            | `TO_CHAR(date, format)`                        | `FORMAT(date, format)`                        |
 
+### Manipulação de números
+| Comando           | MySQL                             | PostgreSQL                            | SQL Server                           |
+| ----------------- | ----------------------------------| --------------------------------------| -------------------------------------|
+| **Arredondamento**| `ROUND(numero, casas_decimais)`    | `ROUND(numero, casas_decimais)`      | `ROUND(numero, casas_decimais)`      |
+| **Truncar**       | `TRUNCATE(numero, casas_decimais)` | `TRUNC(numero, casas_decimais)`       | `ROUND(numero, casas_decimais, 0)`  |
+| **Arredondar para Cima** | `CEIL(numero)`            | `CEIL(numero)`                      | `CEILING(numero)`                   |
+| **Arredondar para Baixo** | `FLOOR(numero)`         | `FLOOR(numero)`                     | `FLOOR(numero)`                     |
+| **Valor Absoluto**| `ABS(numero)`                     | `ABS(numero)`                       | `ABS(numero)`                       |
+| **Potência**      | `POWER(base, expoente)`           | `base ^ expoente`                   | `POWER(base, expoente)`             |
+| **Raiz Quadrada** | `SQRT(numero)`                    | `SQRT(numero)`                      | `SQRT(numero)`                      |
+| **Valor Máximo**  | `GREATEST(numero1, numero2)`      | `GREATEST(numero1, numero2)`        | `GREATEST(numero1, numero2)`        |
+| **Valor Mínimo**  | `LEAST(numero1, numero2)`         | `LEAST(numero1, numero2)`           | `LEAST(numero1, numero2)`           |
+| **Aleatório**     | `RAND()` ou `RAND(seed)`           | `RANDOM()`                          | `RAND()` ou `RAND(seed)`            |
+
+### Manipulação de datas
+| Comando                 | MySQL                             | PostgreSQL                            | SQL Server                           |
+| ----------------------- | ----------------------------------| --------------------------------------| -------------------------------------|
+| **Obter Data Atual**    | `SELECT CURRENT_DATE();`          | `SELECT CURRENT_DATE;`                | `SELECT GETDATE();`                  |
+| **Obter Hora Atual**    | `SELECT CURRENT_TIME();`          | `SELECT CURRENT_TIME;`                | `SELECT GETDATE();`                  |
+| **Obter Data e Hora Atuais** | `SELECT CURRENT_TIMESTAMP();`  | `SELECT CURRENT_TIMESTAMP;`          | `SELECT GETDATE();`                  |
+| **Extrair Ano**          | `SELECT YEAR(data);`              | `SELECT EXTRACT(YEAR FROM data);`    | `SELECT YEAR(data);`                 |
+| **Extrair Mês**          | `SELECT MONTH(data);`             | `SELECT EXTRACT(MONTH FROM data);`   | `SELECT MONTH(data);`                |
+| **Extrair Dia**          | `SELECT DAY(data);`               | `SELECT EXTRACT(DAY FROM data);`     | `SELECT DAY(data);`                  |
+| **Adicionar Dias**       | `SELECT DATE_ADD(data, INTERVAL quantidade_dias DAY);` | `SELECT data + quantidade_dias;` | `SELECT DATEADD(DAY, quantidade_dias, data);` |
+| **Subtrair Dias**        | `SELECT DATE_SUB(data, INTERVAL quantidade_dias DAY);` | `SELECT data - quantidade_dias;` | `SELECT DATEADD(DAY, -quantidade_dias, data);`|
+| **Formatar Data**        | `SELECT DATE_FORMAT(data, formato);` | `SELECT TO_CHAR(data, formato);`  | `SELECT FORMAT(data, formato);`     |
+| **Diferença em Dias**    | `SELECT DATEDIFF(data1, data2);`  | `SELECT (data1 - data2);`            | `SELECT DATEDIFF(DAY, data2, data1);`|
 
 # Comandos ANSI
 ## Comandos DML (Data Manipulation Language)
