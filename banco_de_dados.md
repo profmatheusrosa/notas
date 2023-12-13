@@ -1,3 +1,10 @@
+# Sumário
+- [Introdução](#introducao)
+- [Comandos ANSI](#comandos-ansi)
+- [Comandos DDL (Data Definition Language)](#Comandos-DDL-(Data-Definition-Language))
+
+### Introdução
+
 # Comandos 
 
 | Banco de Dados | Comando  para Criar Tabela                                     |
@@ -41,6 +48,19 @@
 | Banco de Dados | Comando  para Excluir Todos os Registros         |
 | -------------- | --------------------------------------- |
 | MySQL, Postgre, SQL Server, Oracle         | `TRUNCATE TABLE nome_tabela; `   |
+
+### Manipulação de Strings 
+| Comando           | MySQL                                 | PostgreSQL                                      | SQL Server                                    |
+| ----------------- | --------------------------------------| ----------------------------------------------- | --------------------------------------------- |
+| **Concatenação**  | `CONCAT(string1, string2)`            | ```string1 \|\| string2```                           | `string1 + string2`                            |
+| **Comprimento**   | `LENGTH(string)` ou `CHAR_LENGTH(string)`| `LENGTH(string)` ou `CHAR_LENGTH(string)`   | `LEN(string)` ou `DATALENGTH(string)`         |
+| **Substring**     | `SUBSTRING(string FROM start FOR length)` | `SUBSTRING(string FROM start FOR length)`  | `SUBSTRING(string, start, length)`            |
+| **Uppercase**     | `UPPER(string)`                       | `UPPER(string)`                                | `UPPER(string)`                               |
+| **Lowercase**     | `LOWER(string)`                       | `LOWER(string)`                                | `LOWER(string)`                               |
+| **Trim**          | `TRIM([leading\|trailing\|both] characters FROM string)` | `TRIM([leading\|trailing\|both] characters FROM string)` | `LTRIM(RTRIM(string))`                        |
+| **Replace**       | `REPLACE(string, search, replacement)` | `REPLACE(string, search, replacement)`         | `REPLACE(string, search, replacement)`        |
+| **Posição**       | `POSITION(substring IN string)`       | `POSITION(substring IN string)`                | `CHARINDEX(substring, string)`                |
+| **Formatar Data** | `DATE_FORMAT(date, format)`            | `TO_CHAR(date, format)`                        | `FORMAT(date, format)`                        |
 
 
 # Comandos  ANSI
