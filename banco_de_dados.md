@@ -1,7 +1,7 @@
 # Sumário
 - [Introdução](#introducao)
 - [Comandos ANSI](#comandos-ansi)
-- [Comandos DDL (Data Definition Language)](#Comandos-DDL-(Data-Definition-Language))
+- [Comandos DDL (Data Definition Language)](#comandos-dml-data-manipulation-language)
 
 ### Introdução
 
@@ -63,7 +63,7 @@
 | **Formatar Data** | `DATE_FORMAT(date, format)`            | `TO_CHAR(date, format)`                        | `FORMAT(date, format)`                        |
 
 
-# Comandos  ANSI
+# Comandos ANSI
 ## Comandos DML (Data Manipulation Language)
 | Comando DML SQL ANSI  | Exemplo do Comando                                     |
 | ---------------- | ------------------------------------------------------ |
