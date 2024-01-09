@@ -5,6 +5,7 @@
 3. [Tipos de dados](#tipos-de-dados)
 4. [Manipulação de Strings](#manipulação-de-strings)
 5. [Manipulação de Listas](#manipulação-de-listas)
+6. [Manipulação de Dicionários](#manipulação-de-dicionários)
 
 
 
@@ -88,5 +89,20 @@
 | Inverter Lista           | `Collections.reverse(list);`    | `list.reverse();`               | `list.reverse()`                      |
 | Filtrar Elementos por Condição | `List<String> filtered = list.stream().filter(condition).collect(Collectors.toList());` | `let filtered = list.filter(item => condition);` | `filtered = [item for item in list if condition]` |
 | Mapear Elementos por Função | `List<String> mapped = list.stream().map(transform).collect(Collectors.toList());` | `let mapped = list.map(item => transform(item));` | `mapped = [transform(item) for item in list]` |
+
+# Manipulação de Dicionários
+| Operação            | Java                       | JavaScript                | Python                   |
+|--------------------- |----------------------------|--------------------------- |--------------------------|
+| Criar Dicionário    | `Map<Key, Value> map = new HashMap<>();` | `let obj = {};`          | `dict = {}`              |
+| Adicionar Chave-Valor | `map.put(key, value);`      | `obj[key] = value;`        | `dict[key] = value`       |
+| Acessar Valor por Chave | `Value value = map.get(key);` | `let value = obj[key];`  | `value = dict[key]`      |
+| Verificar Chave     | `map.containsKey(key);`    | `key in obj;`             | `key in dict`            |
+| Remover Chave-Valor | `map.remove(key);`         | `delete obj[key];`         | `del dict[key]`          |
+| Iterar sobre Chaves  | `for (Key key : map.keySet()) { // código usando key }` | `for (let key in obj) { // código usando key }` | `for key in dict: # código usando key` |
+| Iterar sobre Valores | `for (Value value : map.values()) { // código usando value }` | `for (let value of Object.values(obj)) { // código usando value }` | `for value in dict.values(): # código usando value` |
+| Iterar sobre Chave-Valor | `for (Map.Entry<Key, Value> entry : map.entrySet()) { // código usando entry.getKey(), entry.getValue() }` | `for (let [key, value] of Object.entries(obj)) { // código usando key, value }` | `for key, value in dict.items(): # código usando key, value` |
+| Obter Todas as Chaves | `Set<Key> keys = map.keySet();` | `let keys = Object.keys(obj);` | `keys = dict.keys()`     |
+| Obter Todas os Valores | `Collection<Value> values = map.values();` | `let values = Object.values(obj);` | `values = dict.values()` |
+| Obter Todas as Chave-Valor | `Set<Map.Entry<Key, Value>> entries = map.entrySet();` | `let entries = Object.entries(obj);` | `entries = dict.items()` |
 
 
