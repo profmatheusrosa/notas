@@ -3,13 +3,12 @@
 - [Manipulação de Strings](#manipulação-de-strings)
 - [Manipulação de Números](#manipulação-de-números)
 - [Manipulação de Datas](#manipulação-de-datas)
-- [Comandos ANSI](#comandos-ansi)
 - [Comandos DML (Data Manipulation Language)](#comandos-dml-data-manipulation-language)
-- [Comandos DDL (Data Definition Language)]
-- [Comandos DTL (Data Transaction Language)]
+- [Comandos DDL (Data Definition Language)](#comandos-ddl-data-definition-language)
+- [Comandos DTL (Data Transaction Language)](#comandos-dtl-data-transaction-language)
 - [Comandos DCL (Data Control Language)](#comandos-dcl-data-control-language)
 
-### Introdução
+# Introdução
 Revisão dos comandos SQL
 
 # Comandos 
@@ -56,7 +55,7 @@ Revisão dos comandos SQL
 | -------------- | --------------------------------------- |
 | MySQL, Postgre, SQL Server, Oracle         | `TRUNCATE TABLE nome_tabela; `   |
 
-### Manipulação de Strings 
+# Manipulação de Strings 
 | Comando           | MySQL                                 | PostgreSQL                                      | SQL Server                                    |
 | ----------------- | --------------------------------------| ----------------------------------------------- | --------------------------------------------- |
 | **Concatenação**  | `CONCAT(string1, string2)`            | ```string1 \|\| string2```                           | `string1 + string2`                            |
@@ -69,7 +68,7 @@ Revisão dos comandos SQL
 | **Posição**       | `POSITION(substring IN string)`       | `POSITION(substring IN string)`                | `CHARINDEX(substring, string)`                |
 | **Formatar Data** | `DATE_FORMAT(date, format)`            | `TO_CHAR(date, format)`                        | `FORMAT(date, format)`                        |
 
-### Manipulação de números
+# Manipulação de números
 | Comando           | MySQL                             | PostgreSQL                            | SQL Server                           |
 | ----------------- | ----------------------------------| --------------------------------------| -------------------------------------|
 | **Arredondamento**| `ROUND(numero, casas_decimais)`    | `ROUND(numero, casas_decimais)`      | `ROUND(numero, casas_decimais)`      |
@@ -83,7 +82,7 @@ Revisão dos comandos SQL
 | **Valor Mínimo**  | `LEAST(numero1, numero2)`         | `LEAST(numero1, numero2)`           | `LEAST(numero1, numero2)`           |
 | **Aleatório**     | `RAND()` ou `RAND(seed)`           | `RANDOM()`                          | `RAND()` ou `RAND(seed)`            |
 
-### Manipulação de datas
+# Manipulação de datas
 | Comando                 | MySQL                             | PostgreSQL                            | SQL Server                           |
 | ----------------------- | ----------------------------------| --------------------------------------| -------------------------------------|
 | **Obter Data Atual**    | `SELECT CURRENT_DATE();`          | `SELECT CURRENT_DATE;`                | `SELECT GETDATE();`                  |
@@ -97,8 +96,7 @@ Revisão dos comandos SQL
 | **Formatar Data**        | `SELECT DATE_FORMAT(data, formato);` | `SELECT TO_CHAR(data, formato);`  | `SELECT FORMAT(data, formato);`     |
 | **Diferença em Dias**    | `SELECT DATEDIFF(data1, data2);`  | `SELECT (data1 - data2);`            | `SELECT DATEDIFF(DAY, data2, data1);`|
 
-# Comandos ANSI
-## Comandos DML (Data Manipulation Language)
+# Comandos DML (Data Manipulation Language)
 | Comando DML SQL ANSI  | Exemplo do Comando                                     |
 | ---------------- | ------------------------------------------------------ |
 | `SELECT`         | `SELECT coluna FROM tabela WHERE condição;`           |
@@ -118,7 +116,7 @@ Revisão dos comandos SQL
 | `UPDATE SET`     | `UPDATE tabela SET coluna = novo_valor WHERE condição;` |
 | `DELETE FROM`    | `DELETE FROM tabela WHERE condição;`                   |
 
-## Comandos DDL (Data Definition Language)
+# Comandos DDL (Data Definition Language)
 | Comando DDL SQL ANSI | Exemplo do Comando                                     |
 | ---------------- | ------------------------------------------------------ |
 | `CREATE TABLE`   | `CREATE TABLE nome_tabela (coluna1 tipo1, coluna2 tipo2, PRIMARY KEY (coluna1));` |
@@ -132,7 +130,7 @@ Revisão dos comandos SQL
 | `ALTER DATABASE` | `ALTER DATABASE nome_banco MODIFY nome_coluna tipo;`   |
 | `DROP DATABASE`  | `DROP DATABASE nome_banco;`                            |
 
-## Comandos DTL (Data Transaction Language)
+# Comandos DTL (Data Transaction Language)
 | Comando DTL SQL ANSI | Exemplo do Comando                                     |
 | ---------------- | ------------------------------------------------------ |
 | `COMMIT`         | `COMMIT;`                                              |
@@ -141,7 +139,7 @@ Revisão dos comandos SQL
 | `ROLLBACK TO`    | `ROLLBACK TO nome_savepoint;`                          |
 | `RELEASE SAVEPOINT` | `RELEASE SAVEPOINT nome_savepoint;`                  |
 
-## Comandos DCL (Data Control Language)
+# Comandos DCL (Data Control Language)
 | Comando DCL SQL ANSI  | Exemplo do Comando                                       |
 | ---------------- | -------------------------------------------------------- |
 | `GRANT`          | `GRANT tipo_privilégio ON objeto TO usuário;`            |
