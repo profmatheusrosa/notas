@@ -1,11 +1,3 @@
-# provas
+# 📘 Notas de estudo 
 
-| Símbolo | Operação        |
-|---------|-----------------|
-|    +    | soma            |
-|    -    | subtração       |
-|    *    | multiplicação   |
-|    /    | divisão         |
-|    //   | divisão inteira |
-|    %    | resto           |
-|    **   | potência        |
+
