@@ -26,36 +26,38 @@
 | **Frameworks Populares (APIs)** | Django Rest Framework, Flask-RESTful | Spring Boot, Jersey                   | Express, Fastify                       |
 | **Frameworks Populares (Web)**  | Django, Flask                         | Spring MVC, Apache Struts             | React, Angular, Vue.js, Express        |
 
-# Principais comandos
-| Sintaxe             | Java                       | JavaScript                 | Python                 |
-|---------------------|----------------------------|--------------------------- |------------------------|
-| Comentários         | // Single-line, /* Multi-line */ | // Single-line, /* Multi-line */ | # Single-line, ''' Multi-line ''' |
-| Variáveis           | int x = 5;                  | let x = 5;                  | x = 5                  |
-| Estruturas de Controle | if (condição) { // código } | if (condição) { // código } | if condição: # código  |
-|                     | else if (outra) { // código } | else if (outra) { // código } | elif outra: # código   |
-|                     | else { // código }          | else { // código }          | else: # código         |
-| Loops               | for (int i=0; i<5; i++) { // código } | for (let i=0; i<5; i++) { // código } | for i in range(5): # código  |
-|                     | while (condição) { // código } | while (condição) { // código } | while condição: # código     |
-| Funções            | returnType functionName() { // código return value; } | function functionName() { // código return value; } | def functionName(): # código |
-| Listas/Arrays      | int[] array = {1, 2, 3};     | let array = [1, 2, 3];       | array = [1, 2, 3]      |
-| Dicionários/Objetos | Map<Key, Value> map = new HashMap<>(); | let obj = {};          | dict = {}             |
-| Impressão na Tela  | System.out.println();        | console.log();             | print()               |
 
+# Principais comandos
+| Sintaxe             | Java                          | JavaScript                  | Python                    |
+|---------------------|-------------------------------|----------------------------- |---------------------------|
+| Comentários         | `// Single-line, /* Multi-line */` | `// Single-line, /* Multi-line */` | `# Single-line, ''' Multi-line '''` |
+| Variáveis           | `int x = 5;`                  | `let x = 5;`                 | `x = 5`                   |
+| Estruturas de Controle | `if (condição) { // código }` | `if (condição) { // código }` | `if condição: # código`  |
+|                     | `else if (outra) { // código }` | `else if (outra) { // código }` | `elif outra: # código`   |
+|                     | `else { // código }`          | `else { // código }`         | `else: # código`         |
+| Loops               | `for (int i=0; i<5; i++) { // código }` | `for (let i=0; i<5; i++) { // código }` | `for i in range(5): # código`  |
+|                     | `while (condição) { // código }` | `while (condição) { // código }` | `while condição: # código`     |
+| Funções            | `returnType functionName() { // código return value; }` | `function functionName() { // código return value; }` | `def functionName(): # código` |
+| Listas/Arrays      | `int[] array = {1, 2, 3};`     | `let array = [1, 2, 3];`      | `array = [1, 2, 3]`       |
+| Dicionários/Objetos | `Map<Key, Value> map = new HashMap<>();` | `let obj = {};`           | `dict = {}`              |
+| Impressão na Tela  | `System.out.println();`        | `console.log();`             | `print()`                |
 
 
 # Tipos de dados
-| Tipo de Dado       | Java                       | JavaScript                 | Python                 |
-|-------------------- |--------------------------- |--------------------------- |------------------------|
-| Números             | int, long, float, double    | Number                     | int, float, complex     |
-| Texto/String        | String                      | String                     | str                    |
-| Booleano            | boolean                     | Boolean                    | bool                   |
-| Lista/Array         | int[], String[], etc.       | Array                      | list                   |
-| Dicionário/Objeto   | Map<Key, Value>              | Object, Map                | dict                   |
-| Null/Undefined      | null                        | undefined                  | None                   |
-| Data/Tempo          | java.util.Date, java.time.LocalDate | Date                  | datetime               |
-| Conjunto            | HashSet, TreeSet             | Set                        | set                    |
-| Caractere           | char                        | String (single char)       | str (single char)      |
-| Tipagem (Type)      | Estática                    | Dinâmica                   | Dinâmica               |
+| Tipo de Dado       | Java                       | JavaScript                        | Python                                 |
+|-------------------- |--------------------------- |---------------------------------- |----------------------------------------|
+| Números Inteiros    | `int x = 5;`                    | `let x = 5;`                      | `x = 5`                                |
+| Números Longos      | `long y = 1000000000L;`         | Não aplicável                    | `y = 1000000000`                       |
+| Números de Ponto Flutuante Simples | `float z = 3.14f;`          | `let z = 3.14;`                   | `z = 3.14`                             |
+| Texto/String        | `String str = "Hello";`     | `let str = "Hello";`              | `str = "Hello"`                        |
+| Booleano            | `boolean flag = true;`      | `let flag = true;`                | `flag = True`                          |
+| Lista/Array         | `int[] numbers = {1, 2, 3};` | `let numbers = [1, 2, 3];`         | `numbers = [1, 2, 3]`                   |
+| Dicionário/Objeto   | `Map<String, Integer> map = new HashMap<>();` | `let obj = {key: value};`   | `dict = {'key': value}`                |
+| Null/Undefined      | `String str = null;`        | `let variable;`                   | `variable = None`                      |
+| Data/Tempo          | `Date now = new Date();`     | `let now = new Date();`           | `from datetime import datetime`<br>`now = datetime.now()` |
+| Conjunto            | `Set<String> set = new HashSet<>();` | `let set = new Set();`      | `set = set()`                         |
+| Caractere           | `char letter = 'A';`         | `let letter = 'A';`               | `letter = 'A'`                         |
+| Tipagem (Type)      | Estática                    | Dinâmica                          | Dinâmica                               |
 
 
 # Manipulação de Strings
@@ -89,6 +91,7 @@
 | Inverter Lista           | `Collections.reverse(list);`    | `list.reverse();`               | `list.reverse()`                      |
 | Filtrar Elementos por Condição | `List<String> filtered = list.stream().filter(condition).collect(Collectors.toList());` | `let filtered = list.filter(item => condition);` | `filtered = [item for item in list if condition]` |
 | Mapear Elementos por Função | `List<String> mapped = list.stream().map(transform).collect(Collectors.toList());` | `let mapped = list.map(item => transform(item));` | `mapped = [transform(item) for item in list]` |
+
 
 # Manipulação de Dicionários
 | Operação            | Java                       | JavaScript                | Python                   |
