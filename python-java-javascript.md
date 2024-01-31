@@ -7,6 +7,7 @@
 5. [Manipulação de Listas](#manipulação-de-listas)
 6. [Manipulação de Dicionários](#manipulação-de-dicionários)
 
+---
 
 
 # Principais Características
