@@ -10,21 +10,21 @@
 
 
 # Principais Características
-| Critério                        | Python                                 | Java                                   | JavaScript                            |
+| Critério                        | Java                                   | JavaScript                            | Python                                 |
 |---------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
-| **Paradigma de Programação**    | Multi-paradigma (Orientado a Objetos, Procedural, Funcional) | Orientado a Objetos                 | Multi-paradigma (Orientado a Objetos, Procedural) |
-| **Propósito/Domínio de Aplicação** | Geral (web, automação, ciência de dados) | Geral (desktop, web, mobile)          | Web (front-end, back-end com Node.js) |
-| **Tipagem de Dados**            | Dinâmica e Forte                      | Estática e Forte                      | Dinâmica e Fraca                       |
-| **Forma de Execução**           | Interpretada                          | Compilada e Interpretada              | Interpretada                           |
-| **Ambiente de Execução**        | Local e Servidor                      | Máquina Virtual Java (JVM)            | Navegador e Node.js                   |
-| **Gerenciamento de Memória**    | Automático (Garbage Collection)       | Gerenciamento automático com Garbage Collection | Automático (Garbage Collection)        |
-| **Comunidade e Ecossistema**    | Grande e Ativa                        | Grande e Estabelecida                 | Grande e Ativa                         |
-| **Sintaxe e Leitura de Código** | Sintaxe limpa e legível               | Sintaxe rigorosa e verbosa            | Sintaxe flexível e concisa             |
-| **Uso em Desenvolvimento Web**  | Sim, com frameworks como Django e Flask | Sim, com frameworks como Spring e Hibernate | Sim, com frameworks como React e Node.js |
-| **Uso em IA e Ciência de Dados** | Muito utilizado (com bibliotecas como NumPy, Pandas, TensorFlow) | Utilizado (principalmente com bibliotecas Java para machine learning) | Utilizado (com bibliotecas como TensorFlow.js e Node.js para server-side) |
-| **Frameworks Populares (Banco de Dados)** | Django ORM, SQLAlchemy               | Hibernate, Spring Data JPA            | Sequelize, Mongoose                    |
-| **Frameworks Populares (APIs)** | Django Rest Framework, Flask-RESTful | Spring Boot, Jersey                   | Express, Fastify                       |
-| **Frameworks Populares (Web)**  | Django, Flask                         | Spring MVC, Apache Struts             | React, Angular, Vue.js, Express        |
+| **Paradigma de Programação**    | Orientado a Objetos                    | Multi-paradigma (Orientado a Objetos, Procedural) | Multi-paradigma (Orientado a Objetos, Procedural, Funcional) |
+| **Propósito/Domínio de Aplicação** | Geral (desktop, web, mobile)          | Web (front-end, back-end com Node.js) | Geral (web, automação, ciência de dados) |
+| **Tipagem de Dados**            | Estática e Forte                      | Dinâmica e Fraca                       | Dinâmica e Forte                      |
+| **Forma de Execução**           | Compilada e Interpretada              | Interpretada                           | Interpretada                          |
+| **Ambiente de Execução**        | Máquina Virtual Java (JVM)            | Navegador e Node.js                   | Local e Servidor                      |
+| **Gerenciamento de Memória**    | Gerenciamento automático com Garbage Collection | Automático (Garbage Collection)        | Automático (Garbage Collection)       |
+| **Comunidade e Ecossistema**    | Grande e Estabelecida                 | Grande e Ativa                         | Grande e Ativa                        |
+| **Sintaxe e Leitura de Código** | Sintaxe rigorosa e verbosa            | Sintaxe flexível e concisa             | Sintaxe limpa e legível               |
+| **Uso em Desenvolvimento Web**  | Sim, com frameworks como Spring e Hibernate | Sim, com frameworks como React e Node.js | Sim, com frameworks como Django e Flask |
+| **Uso em IA e Ciência de Dados** | Utilizado (principalmente com bibliotecas Java para machine learning) | Utilizado (com bibliotecas como TensorFlow.js e Node.js para server-side) | Muito utilizado (com bibliotecas como NumPy, Pandas, TensorFlow) |
+| **Frameworks Populares (Banco de Dados)** | Hibernate, Spring Data JPA            | Sequelize, Mongoose                    | Django ORM, SQLAlchemy               |
+| **Frameworks Populares (APIs)** | Spring Boot, Jersey                   | Express, Fastify                       | Django Rest Framework, Flask-RESTful |
+| **Frameworks Populares (Web)**  | Spring MVC, Apache Struts             | React, Angular, Vue.js, Express        | Django, Flask                         |
 
 
 # Principais comandos
