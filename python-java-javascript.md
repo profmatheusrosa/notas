@@ -6,7 +6,7 @@
 4. [Manipulação de Strings](#manipulação-de-strings)
 5. [Manipulação de Listas](#manipulação-de-listas)
 6. [Manipulação de Dicionários](#manipulação-de-dicionários)
-
+7. [Específicos Python](#especificos-python)
 ---
 
 
@@ -109,4 +109,8 @@
 | Obter Todas os Valores | `Collection<Value> values = map.values();` | `let values = Object.values(obj);` | `values = dict.values()` |
 | Obter Todas as Chave-Valor | `Set<Map.Entry<Key, Value>> entries = map.entrySet();` | `let entries = Object.entries(obj);` | `entries = dict.items()` |
 
-
+# Específicos Python
+- [ ] Comprehension
+- [ ] Map
+- [ ] Filter
+- [ ] Reduce 
