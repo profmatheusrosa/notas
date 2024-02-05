@@ -6,7 +6,7 @@
 4. [Manipulação de Strings](#manipulação-de-strings)
 5. [Manipulação de Listas](#manipulação-de-listas)
 6. [Manipulação de Dicionários](#manipulação-de-dicionários)
-7. [Específicos Python](#especificos-python)
+7. [Específicos Python](#específicos-python)
 ---
 
 
