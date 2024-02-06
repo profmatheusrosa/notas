@@ -7,6 +7,7 @@
 5. [Manipulação de Listas](#manipulação-de-listas)
 6. [Manipulação de Dicionários](#manipulação-de-dicionários)
 7. [Específicos Python](#específicos-python)
+8. [Específicos Java](#específicos-java)
 ---
 
 
@@ -111,6 +112,12 @@
 
 # Específicos Python
 - [ ] Comprehension
+- [ ] Geradores
+- [ ] Lambda
 - [ ] Map
 - [ ] Filter
-- [ ] Reduce 
+- [ ] Reduce
+- [ ] Exceções
+
+# Específicos Java
+- [ ] Java 10, lambda
