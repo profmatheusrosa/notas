@@ -1,3 +1,15 @@
+
+## Configurações
+| Comando                          | Descrição                                      | Exemplo Prático                                       |
+|----------------------------------|------------------------------------------------|-------------------------------------------------------|
+| `git config --global user.name "<Seu Nome>"` | Define o nome do usuário globalmente.    | `git config --global user.name "João da Silva"`   |
+| `git config --global user.email "<seu-email@example.com>"` | Define o email do usuário globalmente. | `git config --global user.email "joao@example.com"` |
+| `git config --global core.editor "<editor>"` | Define o editor de texto padrão.        | `git config --global core.editor "vim"`             |
+| `git config --global color.ui auto` | Ativa a colorização da saída do Git.   | `git config --global color.ui auto`                |
+| `git config --global alias.<alias-name> "<command>"` | Cria um alias para um comando.  | `git config --global alias.st status`                |
+| `git config --list` | Lista todas as configurações do Git.  | `git config --list`                                  |
+
+
 | Comando                          | Descrição                                      | Exemplo Prático                                       |
 |----------------------------------|------------------------------------------------|-------------------------------------------------------|
 | `git init`                       | Inicia um novo repositório Git.                | `git init`                                            |
