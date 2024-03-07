@@ -7,6 +7,7 @@
 - [Comandos DDL (Data Definition Language)](#comandos-ddl-data-definition-language)
 - [Comandos DTL (Data Transaction Language)](#comandos-dtl-data-transaction-language)
 - [Comandos DCL (Data Control Language)](#comandos-dcl-data-control-language)
+- [Ordem de execução das cláusulas SQL](#ordem-de-execução-das-cláusulas-sql)
 
 # Introdução
 Revisão dos comandos SQL
@@ -144,4 +145,23 @@ Revisão dos comandos SQL
 | ---------------- | -------------------------------------------------------- |
 | `GRANT`          | `GRANT tipo_privilégio ON objeto TO usuário;`            |
 | `REVOKE`         | `REVOKE tipo_privilégio ON objeto FROM usuário;`         |
+
+# Ordem de execução das cláusulas SQL
+---
+
+1. **FROM**: Especifica a(s) tabela(s) das quais os dados serão selecionados.
+
+2. **WHERE**: Aplica condições para filtrar as linhas retornadas da(s) tabela(s) especificada(s) na cláusula FROM.
+
+3. **GROUP BY**: Agrupa as linhas resultantes de acordo com um conjunto de colunas.
+
+4. **HAVING**: Aplica condições de filtro para os grupos definidos na cláusula GROUP BY.
+
+5. **SELECT**: Especifica as colunas que serão incluídas no resultado da consulta.
+
+6. **ORDER BY**: Classifica o conjunto de resultados com base em uma ou mais colunas.
+
+7. **LIMIT** / **OFFSET**: Limita o número de linhas retornadas e/ou especifica quantas linhas pular a partir do início do conjunto de resultados.
+
+É importante notar que nem todas as cláusulas são necessárias em todas as consultas. Por exemplo, uma consulta pode não ter uma cláusula GROUP BY ou uma cláusula HAVING, dependendo dos requisitos da consulta.
 
