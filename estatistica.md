@@ -25,10 +25,3 @@
 *   **χ² (qui-quadrado)**: Estatística de teste para distribuição qui-quadrado.
 *   **F**: Estatística de teste para distribuição F de Fisher.
 *   **R²**: Coeficiente de determinação.
-
-\begin{align*}
-\overline{x} &= \frac{\sum_{i=1}^{n} x_i}{n} \\
-&= \frac{x_1 + x_2 + \cdots + x_n}{n}
-\end{align*}
-
-
