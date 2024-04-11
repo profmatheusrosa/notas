@@ -76,7 +76,7 @@ $$
 s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2}
 $$
 
-# Escore Z
+## Escore Z
 
 O escore Z é uma medida estatística que descreve a posição de uma pontuação bruta em relação à média da população. Ele é usado para entender se uma determinada pontuação é típica para uma determinada distribuição ou se é atípica. O escore Z também pode ser usado para comparar pontuações de diferentes distribuições.
 
@@ -94,23 +94,61 @@ Onde:
 - `μ` é a média da população, e
 - `σ` é o desvio padrão da população.
 
+# Distribuição Binomial
+
+A distribuição binomial é uma distribuição de probabilidade discreta que descreve o número de sucessos em uma sequência de n tentativas independentes de um experimento binomial (um experimento com exatamente dois resultados possíveis, sucesso e fracasso). 
+
+A fórmula para a probabilidade binomial é:
+
+$$
+P(X=k) = C(n, k) * (p^k) * ((1-p)^(n-k))
+$$
+
+Onde:
+- `P(X=k)` é a probabilidade de `k` sucessos em `n` tentativas,
+- `C(n, k)` é o número de combinações de `n` itens tomados `k` a `k`,
+- `p` é a probabilidade de sucesso em uma única tentativa, e
+- `(1-p)` é a probabilidade de fracasso (ou seja, 1 menos a probabilidade de sucesso).
+
+# Intervalo de Confiança para a Média
+
+Um intervalo de confiança para a média é um intervalo de valores que é provável que contenha a verdadeira média da população com um certo nível de confiança. É uma maneira de quantificar a incerteza sobre a estimativa de uma média da população com base em dados de amostra.
+
+A fórmula para um intervalo de confiança de 95% para a média é:
+
+$$
+CI = \bar{x} ± (1.96 * (s/√n))
+$$
+
+Onde:
+- `CI` é o intervalo de confiança,
+- `\bar{x}` é a média da amostra,
+- `s` é o desvio padrão da amostra, e
+- `n` é o tamanho da amostra.
+
+O número 1.96 é o valor Z para um intervalo de confiança de 95%. Para outros níveis de confiança, você usaria o valor Z correspondente.
+
 
 ## Teste t de Student
-O teste t de Student é usado para determinar se a média de duas amostras é significativamente diferente. A fórmula é:
+
+O Teste t de Student é um método estatístico que é usado para determinar se há uma diferença significativa entre as médias de dois grupos. Este teste é aplicado quando os dados são normalmente distribuídos, mas o tamanho da amostra é pequeno, e o desvio padrão da população é desconhecido.
+
+O Teste t de Student é frequentemente usado em experimentos científicos e pesquisas médicas para comparar dois grupos diferentes. Por exemplo, pode ser usado para comparar a eficácia de dois medicamentos diferentes.
+
+A fórmula para o Teste t de Student é:
 
 $$
 t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
 $$
 
-Interceptação (b0):
-$$
-b0 = \bar{y} - b1*\bar{x}
-$$
+Onde:
+- `t` é o valor t,
+- `x̄1` e `x̄2` são as médias das duas amostras,
+- `s1` e `s2` são os desvios padrão das duas amostras, e
+- `n1` e `n2` são os tamanhos das duas amostras.
 
-Equação da linha de regressão:
-$$
-y = b0 + b1*x
-$$
+Um valor t grande (ou pequeno) indica que as médias dos dois grupos são significativamente diferentes, enquanto um valor t próximo de zero indica que as médias dos dois grupos são semelhantes.
+
 
 ## Regressão Linear
 
