@@ -23,6 +23,7 @@
 | `git branch`                     | Lista as ramificações locais.                  | `git branch`                                          |
 | `git branch <nome>`              | Cria uma nova ramificação.                     | `git branch nova-feature`                             |
 | `git checkout <ramificação>`     | Muda para uma ramificação específica.          | `git checkout desenvolvimento`                         |
+| `git checkout -b <nome>`         | Cria e muda para uma nova ramificação.        | `git checkout -b nova-feature`                        |
 | `git merge <ramificação>`        | Mescla alterações de uma ramificação.          | `git merge feature-branch`                            |
 | `git pull`                       | Atualiza o repositório local.                  | `git pull origin master`                              |
 | `git push`                       | Envia alterações locais para o remoto.         | `git push origin master`                              |
