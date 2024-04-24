@@ -1,3 +1,67 @@
+# Tipos de Algoritmos de Machine Learning
+
+## Aprendizado Supervisionado
+
+### Classificação
+- Regressão Logística
+- Árvores de Decisão
+- Random Forest
+- Support Vector Machines (SVM)
+- K-Nearest Neighbors (KNN)
+- Naive Bayes
+- Gradient Boosting Machines (GBM)
+- Redes Neurais Convolucionais (CNN)
+- Redes Neurais Recorrentes (RNN)
+
+### Regressão
+- Regressão Linear
+- Regressão de Ridge e Lasso
+- Redes Neurais Artificiais
+- Gradient Boosting Machines (GBM)
+- Máquinas de Vetores de Suporte para Regressão (SVR)
+- ElasticNet
+- LightGBM
+- XGBoost
+
+## Aprendizado Não Supervisionado
+
+### Agrupamento (Clustering)
+- K-Means
+- Agrupamento Hierárquico
+- DBSCAN
+- Mean Shift
+- Gaussian Mixture Models (GMM)
+- OPTICS
+- Birch
+- Affinity Propagation
+
+### Redução de Dimensionalidade
+- Análise de Componentes Principais (PCA)
+- t-Distributed Stochastic Neighbor Embedding (t-SNE)
+- Autoencoders
+- Linear Discriminant Analysis (LDA)
+- Independent Component Analysis (ICA)
+- Sparse PCA
+
+## Aprendizado por Reforço
+
+### Aprendizado Baseado em Política
+- Q-Learning
+- SARSA
+- Deep Q-Networks (DQN)
+- Advantage Actor-Critic (A2C)
+- Policy Gradient Methods
+
+### Aprendizado Baseado em Valor
+- Algoritmo de Iteração de Valor
+- Monte Carlo Control
+- Método de Temporal Difference Learning (TD-Learning)
+- Deep Deterministic Policy Gradient (DDPG)
+- Twin Delayed DDPG (TD3)
+- Proximal Policy Optimization (PPO)
+
+
+
 # Métricas de Avaliação de Modelos
 
 ## Modelos de Classificação
