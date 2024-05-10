@@ -230,9 +230,9 @@ Este projeto é licenciado sob os termos da Licença MIT.
 
 O que isso significa:
 
-A Licença MIT é uma licença de código aberto permissiva que permite que você use, modifique e distribua este software para qualquer finalidade, tanto comercial quanto não comercial, desde que você inclua o aviso de direitos autorais e a permissão na documentação ou no software derivado.
+* A Licença MIT é uma licença de código aberto permissiva que permite que você use, modifique e distribua este software para qualquer finalidade, tanto comercial quanto não comercial, desde que você inclua o aviso de direitos autorais e a permissão na documentação ou no software derivado.
 
 Resumo da Licença MIT:
 
-Você pode usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do software, e permitir que as pessoas a quem o software é fornecido o façam, sujeito às seguintes condições:
-O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do software.
+* Você pode usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do software, e permitir que as pessoas a quem o software é fornecido o façam, sujeito às seguintes condições:
+* O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do software.
