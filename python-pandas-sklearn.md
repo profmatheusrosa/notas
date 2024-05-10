@@ -1,5 +1,5 @@
 
-## Series
+# Series
 
 Uma `Series` é uma estrutura de dados unidimensional do Pandas, uma das bibliotecas mais populares para manipulação e análise de dados em Python. Ela é fundamentalmente uma matriz unidimensional rotulada capaz de conter qualquer tipo de dado (inteiros, strings, números de ponto flutuante, objetos Python, etc.). Uma `Series` consiste em dois componentes principais:
 
@@ -50,7 +50,7 @@ As principais funções de uma Series:
 | `.between(left, right)` | Retorna uma série booleana indicando se os elementos estão entre os valores especificados. |
 | `.clip(lower, upper)` | Limita os valores da série dentro de um intervalo especificado. |
 
-## Dataframe
+# Dataframe
 
 Um DataFrame é uma estrutura de dados bidimensional do Pandas, que é essencialmente uma tabela de dados organizada em linhas e colunas. Cada coluna em um DataFrame é uma Series, e todas as colunas compartilham o mesmo índice. Isso permite armazenar e manipular dados tabulares de forma eficiente em Python.
 Um DataFrame consiste em três componentes principais:
@@ -113,3 +113,51 @@ Os DataFrames no Pandas oferecem uma ampla gama de funções para manipulação,
 
 Essas são apenas algumas das muitas funções disponíveis para DataFrames no Pandas. Elas fornecem uma ampla gama de ferramentas para análise e manipulação eficaz de dados tabulares.
 
+---
+
+### ⚠️ **Nota de Atenção: Compartilhamento de Referências em DataFrames do Pandas** ⚠️
+
+Ao atribuir um DataFrame a outro DataFrame no Pandas, é importante estar ciente de que ambas as variáveis estão, na verdade, referenciando o mesmo objeto na memória. Isso significa que quaisquer alterações feitas no segundo DataFrame também serão refletidas no primeiro DataFrame, e vice-versa.
+
+Por exemplo, considere o seguinte código:
+
+```python
+import pandas as pd
+
+# Criar um DataFrame original
+df_original = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+
+# Atribuir o DataFrame original a um novo DataFrame
+df_novo = df_original
+
+# Modificar o novo DataFrame
+df_novo['C'] = [7, 8, 9]
+
+print("DataFrame Original:")
+print(df_original)
+print("\nNovo DataFrame:")
+print(df_novo)
+```
+
+Neste caso, ao adicionar a coluna 'C' ao `df_novo`, essa modificação também será refletida no `df_original`, pois ambos os DataFrames compartilham a mesma referência ao objeto DataFrame subjacente.
+
+Para evitar esse comportamento e criar cópias independentes, é necessário utilizar o método `.copy()`:
+
+```python
+# Criar uma cópia independente do DataFrame original
+df_copia = df_original.copy()
+
+# Modificar a cópia do DataFrame
+df_copia['D'] = [10, 11, 12]
+
+print("DataFrame Original:")
+print(df_original)
+print("\nCópia do DataFrame:")
+print(df_copia)
+```
+
+Ao utilizar `.copy()`, cada DataFrame terá sua própria cópia dos dados, garantindo que as alterações feitas em um DataFrame não afetem o outro.
+
+Portanto, ao atribuir DataFrames no Pandas, sempre considere se deseja compartilhar referências ou criar cópias independentes, dependendo dos requisitos específicos do seu código.
+
+---
