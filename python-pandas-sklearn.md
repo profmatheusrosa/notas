@@ -5,7 +5,7 @@
 3. [Dataframes](#dataframes)
    - [Funções](#funções)
    - [Filtros](#filtros)
-- [Contribuição](#contribuição)
+- [Contribuições](#contribuições)
 - [Licença](#licença)
 ---
 
@@ -206,3 +206,33 @@ df_filtrado = df.iloc[2:6]
 ```
 
 Essas são apenas algumas das maneiras de filtrar dados em um DataFrame no Pandas. A escolha do método de filtragem depende da complexidade do critério de filtragem e das preferências pessoais. É importante explorar e experimentar diferentes abordagens para encontrar a que melhor atenda às necessidades específicas de análise de dados.
+
+
+# Contribuições
+
+🚀 Contribuições são bem-vindas! 🚀
+
+Olá a todos os colaboradores e interessados neste projeto! Se você está animado para contribuir e tornar este projeto ainda melhor, estamos ansiosos para receber suas contribuições!
+
+Como contribuir:
+
+1. Abra uma issue: Se você encontrou um bug, tem uma sugestão ou deseja propor uma nova funcionalidade, abra uma issue. Faremos o possível para respondê-la o mais rápido possível.
+2. Faça um fork: Para começar a contribuir, faça um fork deste repositório para sua própria conta do GitHub.
+3. Faça suas alterações: Após fazer o fork, faça as alterações necessárias em sua própria branch. Certifique-se de seguir as diretrizes de contribuição, se houver.
+4. Envie um pull request: Quando suas alterações estiverem prontas, envie um pull request para que possamos revisá-las. Certifique-se de incluir uma descrição clara das alterações que você fez.
+
+
+# Licença
+
+📜 Licença MIT 📜
+
+Este projeto é licenciado sob os termos da Licença MIT.
+
+O que isso significa:
+
+A Licença MIT é uma licença de código aberto permissiva que permite que você use, modifique e distribua este software para qualquer finalidade, tanto comercial quanto não comercial, desde que você inclua o aviso de direitos autorais e a permissão na documentação ou no software derivado.
+
+Resumo da Licença MIT:
+
+Você pode usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias do software, e permitir que as pessoas a quem o software é fornecido o façam, sujeito às seguintes condições:
+O aviso de direitos autorais acima e este aviso de permissão devem ser incluídos em todas as cópias ou partes substanciais do software.
