@@ -120,7 +120,8 @@ Os DataFrames do Pandas suportam uma variedade de operações de manipulação d
 | `.sort_values(by, ascending=True)` | Ordena os valores do DataFrame com base em uma ou mais colunas. |
 | `.to_csv(path)` | Salva o DataFrame em um arquivo CSV. |
 | `.plot()` | Gera visualizações básicas dos dados, como gráficos de linha, barras, histogramas, etc. |
-| `.rename(columns={'old_name': 'new_name'})` | Renomeia as colunas do DataFrame. |
+| `.rename(columns={'old_name': 'new_name'})` | Renomeia as colunas do DataFrame e retorna um novo Dataframe |
+| `.rename(columns={'old_name': 'new_name'}, inplace=True)` | Renomeia as colunas do DataFrame no mesmo DataFrame |
 
 Essas são apenas algumas das muitas funções disponíveis para DataFrames no Pandas. Elas fornecem uma ampla gama de ferramentas para análise e manipulação eficaz de dados tabulares.
 
