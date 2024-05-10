@@ -1,10 +1,13 @@
-- [Series](#series)
-- [Dataframes](#dataframes)
-  - [Funções](#funções)
-  - [Filtros](#filtros)
+# Súmario
+
+1. [Series](#series)
+   - [Funções](#funções)
+3. [Dataframes](#dataframes)
+   - [Funções](#funções)
+   - [Filtros](#filtros)
 - [Contribuição](#contribuição)
 - [Licença](#licença)
-
+---
 
 # Series
 
@@ -37,6 +40,7 @@ Isso resultará na seguinte saída:
 
 Observe que a série inclui automaticamente um índice numérico (0, 1, 2, ...) por padrão, mas você pode fornecer seus próprios rótulos de índice, se necessário. As séries podem ser acessadas por meio de seus índices, assim como as listas do Python:
 
+### Funções
 As principais funções de uma Series:
 
 | Função | Descrição |
