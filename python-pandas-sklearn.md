@@ -1,3 +1,10 @@
+- [Series](#series)
+- [Dataframes](#dataframes)
+  - [Funções](#funções)
+  - [Filtros](#filtros)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
+
 
 # Series
 
@@ -50,7 +57,7 @@ As principais funções de uma Series:
 | `.between(left, right)` | Retorna uma série booleana indicando se os elementos estão entre os valores especificados. |
 | `.clip(lower, upper)` | Limita os valores da série dentro de um intervalo especificado. |
 
-# Dataframe
+# Dataframes
 
 Um DataFrame é uma estrutura de dados bidimensional do Pandas, que é essencialmente uma tabela de dados organizada em linhas e colunas. Cada coluna em um DataFrame é uma Series, e todas as colunas compartilham o mesmo índice. Isso permite armazenar e manipular dados tabulares de forma eficiente em Python.
 Um DataFrame consiste em três componentes principais:
@@ -85,9 +92,8 @@ Isso resultará na seguinte saída:
 3    David     40      Houston
 ```
 
-Os DataFrames do Pandas suportam uma variedade de operações de manipulação de dados, incluindo filtragem, seleção, agregação, mesclagem e muito mais.
-
-Os DataFrames no Pandas oferecem uma ampla gama de funções para manipulação, análise e visualização de dados. Aqui estão algumas das principais funções disponíveis para DataFrames:
+## Funções
+Os DataFrames do Pandas suportam uma variedade de operações de manipulação de dados, incluindo filtragem, seleção, agregação, mesclagem e muito mais. Aqui estão algumas das principais funções disponíveis para DataFrames:
 
 | Função | Descrição |
 | --- | --- |
@@ -161,3 +167,36 @@ Ao utilizar `.copy()`, cada DataFrame terá sua própria cópia dos dados, garan
 Portanto, ao atribuir DataFrames no Pandas, sempre considere se deseja compartilhar referências ou criar cópias independentes, dependendo dos requisitos específicos do seu código.
 
 ---
+## Filtros
+
+Filtrar dados em um DataFrame no Pandas é uma operação comum e útil para selecionar apenas as linhas que atendem a determinados critérios. Existem várias maneiras de filtrar dados em um DataFrame. Algumas das abordagens mais comuns incluem o uso de:
+
+1.  **Operadores de Comparação**: Você pode usar operadores de comparação, como igualdade (`==`), maior que (`>`), menor que (`<`), etc., para criar máscaras booleanas que indicam quais linhas satisfazem as condições especificadas.
+
+```python
+# Filtrar linhas onde a coluna 'idade' é maior que 30
+df_filtrado = df[df['idade'] > 30]
+```
+
+2.  **Método .query()**: O método `.query()` permite filtrar um DataFrame usando expressões de consulta semelhantes ao SQL.
+
+```python
+# Filtrar linhas onde a coluna 'cidade' é igual a 'São Paulo'
+df_filtrado = df.query("cidade == 'São Paulo'")
+```
+
+3.  **Método .loc\[\]**: O método `.loc[]` permite acessar linhas e colunas do DataFrame com base em rótulos de índice.
+
+```python
+# Filtrar linhas onde a coluna 'idade' é maior que 30 e 'cidade' é igual a 'São Paulo'
+df_filtrado = df.loc[(df['idade'] > 30) & (df['cidade'] == 'São Paulo')]
+```
+
+4.  **Método .iloc\[\]**: O método `.iloc[]` permite acessar linhas e colunas do DataFrame com base em posições inteiras.
+  
+```python
+# Filtrar linhas da posição 2 à 5
+df_filtrado = df.iloc[2:6]
+```
+
+Essas são apenas algumas das maneiras de filtrar dados em um DataFrame no Pandas. A escolha do método de filtragem depende da complexidade do critério de filtragem e das preferências pessoais. É importante explorar e experimentar diferentes abordagens para encontrar a que melhor atenda às necessidades específicas de análise de dados.
