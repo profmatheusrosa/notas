@@ -50,9 +50,9 @@
 
 
 
-# Coleções de Dados
+# 3. Coleções de Dados
 
-## Listas
+## - Listas
 As listas são coleções ordenadas e mutáveis de itens. Elas podem conter elementos de diferentes tipos (inteiros, strings, etc.) e permitem a modificação de seus elementos após a criação. 
 
 Exemplo de criação de lista:
@@ -60,7 +60,7 @@ Exemplo de criação de lista:
 lista = [1, 2, 3, "quatro", 5.0]
 ```
 
-## Tuplas
+## - Tuplas
 As tuplas são coleções ordenadas e imutáveis de itens. Elas são semelhantes às listas, mas, uma vez criadas, seus elementos não podem ser modificados.
 
 Exemplo de criação de tupla:
@@ -69,7 +69,7 @@ Copiar código
 tupla = (1, 2, 3, "quatro", 5.0)
 ```
 
-## Dicionários
+## - Dicionários
 Os dicionários em Python são coleções de pares chave-valor, onde cada chave é única e mapeia para um valor específico. Eles são extremamente úteis para armazenar e acessar dados de forma eficiente, especialmente quando a associação entre diferentes tipos de dados é necessária.
 
 ### Características dos Dicionários
@@ -122,7 +122,7 @@ contatos["Alice"] = "novo_email_alice@example.com"
 | `dict.fromkeys(seq, value=None)`    | Cria um novo dicionário com chaves de `seq` e valores iguais a `value`.                            | `novo_dict = dict.fromkeys(["Alice", "Bob"], "email_padrao")`  |
 
 
-## Conjuntos
+## - Conjuntos
 
 Conjuntos (sets) são coleções não ordenadas de elementos únicos, o que significa que cada elemento aparece apenas uma vez em um conjunto. Eles são úteis para operações que envolvem matemática de conjuntos, como união, interseção e diferença. Conjuntos são definidos usando chaves {} ou a função set().
 
@@ -171,3 +171,85 @@ print(conjunto2)  # Saída: {3, 4, 5, 6}
 | `.symmetric_difference_update(other)` | Atualiza o conjunto com a diferença simétrica entre ele e outro.                       | `conjunto1.symmetric_difference_update(conjunto2)`                     |
 | `.pop()`                      | Remove e retorna um elemento arbitrário do conjunto. Levanta um erro `KeyError` se o conjunto estiver vazio. | `conjunto.pop()`                                          |
 | `.frozenset(iterable)`        | Retorna uma versão imutável de um conjunto.                                                    | `fconjunto = frozenset([1, 2, 3])`                                     |
+
+# 4. Funções
+
+Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas permitem modularizar programas, tornando o código mais organizado, legível e fácil de manter. As funções podem receber entradas (argumentos), processá-las e retornar um resultado.
+
+## - Definindo Funções
+Para definir uma função em Python, usamos a palavra-chave def, seguida pelo nome da função, parênteses que podem conter parâmetros e dois pontos. O corpo da função é indentado.
+
+```python
+def nome_da_funcao(parametros):
+    # corpo da função
+    return resultado
+```
+
+Exemplo Simples de Função
+```python
+def saudacao(nome):
+    return f"Olá, {nome}!"
+
+print(saudacao("João"))  # Saída: Olá, João!
+```
+## - Funções com Parâmetros Padrão
+Permitem definir valores padrão para parâmetros que podem ser omitidos ao chamar a função.
+
+```python
+def saudacao(nome, mensagem="Olá"):
+    return f"{mensagem}, {nome}!"
+
+print(saudacao("Maria"))          # Saída: Olá, Maria!
+print(saudacao("Pedro", "Oi"))    # Saída: Oi, Pedro!
+```
+
+## - Funções com Múltiplos Parâmetros
+Aceitam múltiplos argumentos e podem realizar operações mais complexas.
+
+```python
+def soma(a, b):
+    return a + b
+
+print(soma(5, 7))  # Saída: 12
+```
+
+## - Funções com Retorno Múltiplo
+Podem retornar múltiplos valores usando tuplas.
+
+```python
+def operacoes(a, b):
+    soma = a + b
+    diferenca = a - b
+    return soma, diferenca
+
+resultado_soma, resultado_diferenca = operacoes(10, 5)
+print(resultado_soma)       # Saída: 15
+print(resultado_diferenca)  # Saída: 5
+```
+
+## - Funções Anônimas (Lambda)
+São funções pequenas e sem nome, definidas usando a palavra-chave lambda. São úteis para funções curtas e simples.
+
+```python
+dobro = lambda x: x * 2
+print(dobro(4))  # Saída: 8
+```
+
+## - Funções com Argumentos Variáveis
+Aceitam um número variável de argumentos usando *args e **kwargs.
+
+```python
+def soma(*numeros):
+    return sum(numeros)
+
+print(soma(1, 2, 3, 4))  # Saída: 10
+
+def imprimir_informacoes(**info):
+    for chave, valor in info.items():
+        print(f"{chave}: {valor}")
+
+imprimir_informacoes(nome="Ana", idade=25)  
+# Saída:
+# nome: Ana
+# idade: 25
+```
