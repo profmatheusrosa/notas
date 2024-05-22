@@ -126,7 +126,18 @@ contatos["Alice"] = "novo_email_alice@example.com"
 
 Conjuntos (sets) são coleções não ordenadas de elementos únicos, o que significa que cada elemento aparece apenas uma vez em um conjunto. Eles são úteis para operações que envolvem matemática de conjuntos, como união, interseção e diferença. Conjuntos são definidos usando chaves {} ou a função set().
 
-Exemplo de Conjunto
+### Características dos conjuntos:
+
+* Elementos Únicos: Não permitem elementos duplicados. Cada elemento aparece apenas uma vez.
+* Não Ordenados: Não mantêm a ordem dos elementos. A ordem de iteração não é garantida.
+* Mutáveis: Podem ser modificados após a criação. É possível adicionar e remover elementos.
+* Imutabilidade dos Elementos: Os elementos de um conjunto devem ser imutáveis (por exemplo, inteiros, strings, tuplas). Não é possível usar listas ou outros conjuntos como elementos de um conjunto.
+* Eficiência em Operações de Associação: Operações de verificação de associação (como in e not in) são rápidas devido à implementação baseada em tabelas de hash.
+* Operações Matemáticas: Suportam operações matemáticas de conjuntos, como união, interseção, diferença e diferença simétrica.
+* Métodos e Funções Ricos: Possuem um conjunto abrangente de métodos, como `add(), remove(), discard(), union(), intersection(), difference(), symmetric_difference(), issubset(), issuperset(), isdisjoint(), copy(), clear()`, entre outros.
+* Versatilidade: Conjuntos são úteis em diversas aplicações, como eliminação de duplicatas, verificações rápidas de associação, operações matemáticas de conjuntos, etc.
+
+### Criação de um conjunto
 ```python
 # Criando conjuntos
 conjunto1 = {1, 2, 3, 4}
@@ -139,18 +150,24 @@ print(conjunto2)  # Saída: {3, 4, 5, 6}
 ### Funções Principais
 | Função/Método                | Descrição                                                                                      | Exemplo                                                                 |
 |------------------------------|------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
-| `add(elem)`                  | Adiciona um elemento ao conjunto. Se o elemento já estiver presente, nada acontece.            | `conjunto.add(4)`                                                      |
-| `remove(elem)`               | Remove um elemento do conjunto. Levanta um erro `KeyError` se o elemento não estiver presente. | `conjunto.remove(2)`                                                   |
-| `discard(elem)`              | Remove um elemento do conjunto. Não levanta erro se o elemento não estiver presente.           | `conjunto.discard(3)`                                                  |
-| `union(other)`               | Retorna a união de dois conjuntos.                                                             | `conjunto1 | conjunto2` ou `conjunto1.union(conjunto2)`                  |
-| `intersection(other)`        | Retorna a interseção de dois conjuntos.                                                        | `conjunto1 & conjunto2` ou `conjunto1.intersection(conjunto2)`         |
-| `difference(other)`          | Retorna a diferença de dois conjuntos.                                                         | `conjunto1 - conjunto2` ou `conjunto1.difference(conjunto2)`           |
-| `symmetric_difference(other)`| Retorna a diferença simétrica de dois conjuntos.                                               | `conjunto1 ^ conjunto2` ou `conjunto1.symmetric_difference(conjunto2)` |
-| `issubset(other)`            | Verifica se o conjunto é um subconjunto de outro.                                              | `subconjunto.issubset(conjunto1)`                                      |
-| `issuperset(other)`          | Verifica se o conjunto é um superconjunto de outro.                                            | `conjunto1.issuperset(subconjunto)`                                    |
-| `isdisjoint(other)`          | Verifica se dois conjuntos são disjuntos (não têm elementos em comum).                        | `conjunto1.isdisjoint(conjunto2)`                                      |
-| `copy()`                     | Retorna uma cópia rasa do conjunto.                                                           | `conjunto.copy()`                                                      |
-| `clear()`                    | Remove todos os elementos do conjunto.                                                        | `conjunto.clear()`                                                     |
-| `len(set)`                   | Retorna o número de elementos no conjunto.                                                    | `len(conjunto)`                                                        |
-| `in`                         | Verifica se um elemento está no conjunto.                                                     | `3 in conjunto1`                                                       |
-| `not in`                     | Verifica se um elemento não está no conjunto.                                                 | `6 not in conjunto1`                                                   |
+| `.add(elem)`                  | Adiciona um elemento ao conjunto. Se o elemento já estiver presente, nada acontece.            | `conjunto.add(4)`                                                      |
+| `.remove(elem)`               | Remove um elemento do conjunto. Levanta um erro `KeyError` se o elemento não estiver presente. | `conjunto.remove(2)`                                                   |
+| `.discard(elem)`              | Remove um elemento do conjunto. Não levanta erro se o elemento não estiver presente.           | `conjunto.discard(3)`                                                  |
+| `.union(other)`               | Retorna a união de dois conjuntos.                                                             | `conjunto1 | conjunto2` ou `conjunto1.union(conjunto2)`                  |
+| `.intersection(other)`        | Retorna a interseção de dois conjuntos.                                                        | `conjunto1 & conjunto2` ou `conjunto1.intersection(conjunto2)`         |
+| `.difference(other)`          | Retorna a diferença de dois conjuntos.                                                         | `conjunto1 - conjunto2` ou `conjunto1.difference(conjunto2)`           |
+| `.symmetric_difference(other)`| Retorna a diferença simétrica de dois conjuntos.                                               | `conjunto1 ^ conjunto2` ou `conjunto1.symmetric_difference(conjunto2)` |
+| `.issubset(other)`            | Verifica se o conjunto é um subconjunto de outro.                                              | `subconjunto.issubset(conjunto1)`                                      |
+| `.issuperset(other)`          | Verifica se o conjunto é um superconjunto de outro.                                            | `conjunto1.issuperset(subconjunto)`                                    |
+| `.isdisjoint(other)`          | Verifica se dois conjuntos são disjuntos (não têm elementos em comum).                        | `conjunto1.isdisjoint(conjunto2)`                                      |
+| `.copy()`                     | Retorna uma cópia rasa do conjunto.                                                           | `conjunto.copy()`                                                      |
+| `.clear()`                    | Remove todos os elementos do conjunto.                                                        | `conjunto.clear()`                                                     |
+| `.len(set)`                   | Retorna o número de elementos no conjunto.                                                    | `len(conjunto)`                                                        |
+| `.in`                         | Verifica se um elemento está no conjunto.                                                     | `3 in conjunto1`                                                       |
+| `.not in`                     | Verifica se um elemento não está no conjunto.                                                 | `6 not in conjunto1`                                                   |
+| `.update(other)`              | Adiciona elementos de outro conjunto ao conjunto.                                              | `conjunto1.update(conjunto2)`                                          |
+| `.intersection_update(other)` | Atualiza o conjunto com a interseção entre ele e outro.                                         | `conjunto1.intersection_update(conjunto2)`                             |
+| `.difference_update(other)`   | Atualiza o conjunto com a diferença entre ele e outro.                                          | `conjunto1.difference_update(conjunto2)`                               |
+| `.symmetric_difference_update(other)` | Atualiza o conjunto com a diferença simétrica entre ele e outro.                       | `conjunto1.symmetric_difference_update(conjunto2)`                     |
+| `.pop()`                      | Remove e retorna um elemento arbitrário do conjunto. Levanta um erro `KeyError` se o conjunto estiver vazio. | `conjunto.pop()`                                          |
+| `.frozenset(iterable)`        | Retorna uma versão imutável de um conjunto.                                                    | `fconjunto = frozenset([1, 2, 3])`                                     |
