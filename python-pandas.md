@@ -1,17 +1,72 @@
-# Súmario
+# Sumário
 
-1. [Series](#series)
-   - [Funções](#funções)
-3. [Dataframes](#dataframes)
-   - [Funções](#funções)
-   - [Filtros](#filtros)
-- [Contribuições](#contribuições)
-- [Licença](#licença)
+1. [Introdução ao Pandas](#introdução-ao-pandas)
+2. [Estruturas de Dados](#estruturas-de-dados)
+   - [Series](#series)
+   - [DataFrame](#dataframe)
+   - [Criação de Series e DataFrames](#criação-de-series-e-dataframes)
+     - [A partir de listas](#a-partir-de-listas)
+     - [A partir de dicionários](#a-partir-de-dicionários)
+     - [A partir de arquivos (CSV, Excel)](#a-partir-de-arquivos-csv-excel)
+3. [Manipulação de Dados Básica](#manipulação-de-dados-básica)
+   - [Visualização e Inspeção de Dados](#visualização-e-inspeção-de-dados)
+     - [`head()`, `tail()`](#head-tail)
+     - [`info()`](#info)
+     - [`describe()`](#describe)
+     - [`shape` e `size`](#shape-e-size)
+   - [Indexação e Seleção de Dados](#indexação-e-seleção-de-dados)
+     - [Seleção de colunas](#seleção-de-colunas)
+     - [Seleção de linhas (`loc` e `iloc`)](#seleção-de-linhas-loc-e-iloc)
+     - [Fatiamento (`slice`)](#fatiamento-slice)
+   - [Filtragem e Condicionais](#filtragem-e-condicionais)
+     - [Condicionais com DataFrame](#condicionais-com-dataframe)
+     - [Filtragem de linhas](#filtragem-de-linhas)
+     - [Filtragem por múltiplas condições](#filtragem-por-múltiplas-condições)
+4. [Operações em DataFrames](#operações-em-dataframes)
+   - [Operações Básicas](#operações-básicas)
+     - [Adicionar e remover colunas](#adicionar-e-remover-colunas)
+     - [Adicionar e remover linhas](#adicionar-e-remover-linhas)
+     - [Modificação de valores](#modificação-de-valores)
+   - [Operações de String](#operações-de-string)
+     - [Métodos de string](#métodos-de-string)
+     - [Filtragem e transformação de strings](#filtragem-e-transformação-de-strings)
+   - [Operações Matemáticas e Estatísticas](#operações-matemáticas-e-estatísticas)
+     - [Métodos estatísticos (`mean`, `sum`, `min`, `max`)](#métodos-estatísticos-mean-sum-min-max)
+     - [Operações matemáticas em colunas](#operações-matemáticas-em-colunas)
+5. [Manipulação Avançada de Dados](#manipulação-avançada-de-dados)
+   - [Agrupamento e Agregação](#agrupamento-e-agregação)
+     - [`groupby`](#groupby)
+     - [Métodos de agregação (`mean`, `sum`, `count`, etc.)](#métodos-de-agregação-mean-sum-count-etc)
+   - [Mesclagem e Combinação de DataFrames](#mesclagem-e-combinação-de-dataframes)
+     - [`merge`](#merge)
+     - [`concat`](#concat)
+     - [`join`](#join)
+   - [Manipulação de Datas](#manipulação-de-datas)
+     - [Conversão de strings para datas](#conversão-de-strings-para-datas)
+     - [Extração de componentes de data](#extração-de-componentes-de-data)
+     - [Operações com datas](#operações-com-datas)
+6. [Limpeza e Preparação de Dados](#limpeza-e-preparação-de-dados)
+   - [Tratamento de Dados Ausentes](#tratamento-de-dados-ausentes)
+     - [Identificação de valores ausentes](#identificação-de-valores-ausentes)
+     - [Remoção de valores ausentes](#remoção-de-valores-ausentes)
+     - [Preenchimento de valores ausentes](#preenchimento-de-valores-ausentes)
+   - [Detecção e Tratamento de Dados Duplicados](#detecção-e-tratamento-de-dados-duplicados)
+     - [Identificação de duplicatas](#identificação-de-duplicatas)
+     - [Remoção de duplicatas](#remoção-de-duplicatas)
+   - [Transformação de Dados](#transformação-de-dados)
+     - [Normalização e padronização](#normalização-e-padronização)
+     - [Mapeamento e substituição de valores](#mapeamento-e-substituição-de-valores)
+
 ---
 
-# Series
+# Introdução ao Pandas
 
-Uma `Series` é uma estrutura de dados unidimensional do Pandas, uma das bibliotecas mais populares para manipulação e análise de dados em Python. Ela é fundamentalmente uma matriz unidimensional rotulada capaz de conter qualquer tipo de dado (inteiros, strings, números de ponto flutuante, objetos Python, etc.). Uma `Series` consiste em dois componentes principais:
+A biblioteca pandas é uma poderosa ferramenta de análise de dados em Python, amplamente utilizada por cientistas de dados e analistas. Ela fornece estruturas de dados flexíveis e expressivas, como DataFrame e Series, que permitem a manipulação, análise e visualização de dados de forma eficiente.
+
+# Estruturas de Dados
+## Series
+
+Uma `Series` é uma estrutura de dados unidimensional do Pandas, semelhante a uma coluna em uma tabela. Ela é fundamentalmente uma matriz unidimensional rotulada capaz de conter qualquer tipo de dado (inteiros, strings, números de ponto flutuante, objetos Python, etc.). Uma `Series` consiste em dois componentes principais:
 
 1. **Dados**: Os dados são os elementos da série, que podem ser qualquer tipo de dado suportado pelo Python.
 2. **Rótulos (Index)**: Os rótulos são os identificadores associados a cada elemento da série. Eles podem ser números inteiros, strings ou outros tipos de dados.
@@ -61,9 +116,9 @@ As principais funções de uma Series:
 | `.between(left, right)` | Retorna uma série booleana indicando se os elementos estão entre os valores especificados. |
 | `.clip(lower, upper)` | Limita os valores da série dentro de um intervalo especificado. |
 
-# Dataframes
+## Dataframes
 
-Um DataFrame é uma estrutura de dados bidimensional do Pandas, que é essencialmente uma tabela de dados organizada em linhas e colunas. Cada coluna em um DataFrame é uma Series, e todas as colunas compartilham o mesmo índice. Isso permite armazenar e manipular dados tabulares de forma eficiente em Python.
+Um DataFrame é uma estrutura de dados bidimensional do Pandas, semelhante a uma tabela de dados organizada em linhas e colunas. Cada coluna em um DataFrame é uma Series, e todas as colunas compartilham o mesmo índice. Isso permite armazenar e manipular dados tabulares de forma eficiente em Python.
 Um DataFrame consiste em três componentes principais:
 
 1. **Dados**: Os dados são os elementos individuais da tabela, organizados em linhas e colunas.
