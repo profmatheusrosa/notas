@@ -34,6 +34,7 @@
    - [Princípios Fundamentais da POO](#principios-fundamentais-da-poo)
    - [Classes e objetos](#classes-e-objetos)
    - [Métodos e atributos](#atributos-e-métodos)
+   - [Métodos Especiais](#métodos-especiais)
    - [Herança e polimorfismo](#herança-e-polimorfismo)
    - [Encapsulamento e abstração](#encapsulamento-e-abstração)
 10. [Módulos e Pacotes](#módulos-e-pacotes)
@@ -51,9 +52,9 @@
 
 
 
-# 3. Coleções de Dados
+# Coleções de Dados
 
-## - Listas
+## Listas
 As listas são coleções ordenadas e mutáveis de itens. Elas podem conter elementos de diferentes tipos (inteiros, strings, etc.) e permitem a modificação de seus elementos após a criação. 
 
 Exemplo de criação de lista:
@@ -61,7 +62,7 @@ Exemplo de criação de lista:
 lista = [1, 2, 3, "quatro", 5.0]
 ```
 
-## - Tuplas
+## Tuplas
 As tuplas são coleções ordenadas e imutáveis de itens. Elas são semelhantes às listas, mas, uma vez criadas, seus elementos não podem ser modificados.
 
 Exemplo de criação de tupla:
@@ -70,7 +71,7 @@ Copiar código
 tupla = (1, 2, 3, "quatro", 5.0)
 ```
 
-## - Dicionários
+## Dicionários
 Os dicionários em Python são coleções de pares chave-valor, onde cada chave é única e mapeia para um valor específico. Eles são extremamente úteis para armazenar e acessar dados de forma eficiente, especialmente quando a associação entre diferentes tipos de dados é necessária.
 
 ### Características dos Dicionários
@@ -123,7 +124,7 @@ contatos["Alice"] = "novo_email_alice@example.com"
 | `dict.fromkeys(seq, value=None)`    | Cria um novo dicionário com chaves de `seq` e valores iguais a `value`.                            | `novo_dict = dict.fromkeys(["Alice", "Bob"], "email_padrao")`  |
 
 
-## - Conjuntos
+## Conjuntos
 
 Conjuntos (sets) são coleções não ordenadas de elementos únicos, o que significa que cada elemento aparece apenas uma vez em um conjunto. Eles são úteis para operações que envolvem matemática de conjuntos, como união, interseção e diferença. Conjuntos são definidos usando chaves {} ou a função set().
 
@@ -254,9 +255,40 @@ imprimir_informacoes(nome="Ana", idade=25)
 # nome: Ana
 # idade: 25
 ```
+# Manipulação de Strings
+## Formatação de Strings
+### Método `format()`
+Utiliza chaves {} como placeholders para valores.
+
+```python
+nome = "João"
+idade = 30
+mensagem = "Meu nome é {} e eu tenho {} anos.".format(nome, idade)
+# "Meu nome é João e eu tenho 30 anos."
+```
+
+### f-strings (Python 3.6+)
+Usa f antes da string e variáveis dentro de chaves {}.
+
+```python
+nome = "João"
+idade = 30
+mensagem = f"Meu nome é {nome} e eu tenho {idade} anos."
+# "Meu nome é João e eu tenho 30 anos."
+```
+
+### Strings Multilinha
+Strings multilinha são úteis para longos blocos de texto.
+
+```python
+multilinha = """Esta é uma string
+multilinha, que pode conter
+várias linhas de texto."""
+```
+
 # Manipulação de Arquivos
 
-## 6.1. Abertura de arquivos
+## Abertura de arquivos
 Para manipular um arquivo, primeiro precisamos abri-lo. A função `open()` é utilizada para isso. 
 ### Sintaxe Básica 
 ```python
@@ -268,7 +300,7 @@ file = open('caminho_do_arquivo', 'modo')
 * `'a'`: Acrescentar. Adiciona ao final do arquivo.
 * `'b'`: Binário. Utilizado com outros modos,
 
-## 6.2. Leitura de arquivos
+## Leitura de arquivos
 Depois de abrir o arquivo, podemos ler seu conteúdo.
 
 Considere o arquivo de texto chamado `exemplo.txt` com o seguinte conteúdo:
@@ -316,7 +348,7 @@ for linha in linhas:
 file.close()
 ```
 
-## 6.3. Escrita em arquivos
+## Escrita em arquivos
 Para escrever em um arquivo, devemos abrir o arquivo em modo de escrita. Se o arquivo não existir, ele será criado.
 ### Métodos de Escrita 
 * `write(string)`: Escreve uma string no arquivo.
@@ -335,7 +367,7 @@ linhas = ['Primeira linha\n', 'Segunda linha\n', 'Terceira linha\n']
 file.writelines(linhas)
 file.close()
 ```
-## 6.4. Fechamento de arquivos
+## Fechamento de arquivos
 É importante sempre fechar o arquivo após concluir as operações. Isso garante que todos os recursos sejam liberados e que todas as alterações sejam salvas corretamente.
 
 ### Método `close()`
@@ -357,9 +389,9 @@ with open('exemplo.txt', 'r') as file:
 * Prefira usar o bloco `with` para abrir arquivos. Ele torna o código mais limpo e seguro.
 * O método `close()` ainda pode ser utilizado, mas requer mais cuidado para garantir que o arquivo seja fechado em caso de erro.
 
-## 6.5. Manipulação de Arquivos de Texto
-## 6.6. Manipulação de Arquivos Binários
-## 6.7. Manipulação Avançada de Arquivos
+## Manipulação de Arquivos de Texto
+## Manipulação de Arquivos Binários
+## Manipulação Avançada de Arquivos
 ### Leitura de CSV
 Para manipular arquivos CSV, usamos o módulo csv. CSV é um formato comum para armazenamento de dados tabulares.
 
@@ -434,7 +466,7 @@ dados = {
 with open('dados.json', 'w') as file:
     json.dump(dados, file, indent=4)
 ```    
-## 6.8. Erros Comuns e Tratamento de Exceções
+## Erros Comuns e Tratamento de Exceções
 Erros podem ocorrer durante a manipulação de arquivos. É importante tratar exceções para garantir que o programa lide adequadamente com esses erros. 
 
 ```python
@@ -459,10 +491,10 @@ except IOError:
 * Seja específico nos blocos `except` para tratar diferentes tipos de erros de forma apropriada.
 * Use a codificação correta ao ler ou gravar arquivos de texto. Use o argumento encoding `open('exemplo.txt','r', encoding='utf-8')`.
 
-# 8. Programação Orientada a Objetos (POO)
+# Programação Orientada a Objetos (POO)
 A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o software em "objetos", que são instâncias de "classes". Uma classe pode ser vista como um molde ou template que define os atributos (dados) e métodos (funções) que os objetos criados a partir dela terão.
 
-## 8.1. Princípios Fundamentais da POO
+## Princípios Fundamentais da POO
 ### Abstração:
 Abstração é o processo de simplificar a complexidade do software, focando nos aspectos essenciais de uma entidade, ocultando detalhes desnecessários.
 Exemplo: Ao modelar um carro, a abstração poderia focar nos atributos "marca", "modelo" e "ano", sem se preocupar com detalhes como o tipo de material usado nos bancos.
@@ -481,7 +513,7 @@ Exemplo: Um método fazer_som pode ser implementado de formas diferentes em clas
 
 A POO é um paradigma poderoso e amplamente utilizado que facilita a criação de software modular, reutilizável e fácil de manter. Comparado a outros paradigmas, como a programação procedural e funcional, a POO oferece uma maneira intuitiva de modelar e interagir com entidades complexas, refletindo melhor a maneira como pensamos sobre o mundo real. No entanto, a escolha do paradigma deve ser baseada nas necessidades específicas do projeto e nas preferências da equipe de desenvolvimento.
 
-## 8.2. Classes e objetos
+## Classes e objetos
 ### Classe
 Uma classe é um modelo ou um molde que define a estrutura e o comportamento (atributos e métodos) que os objetos criados a partir dessa classe terão. Ela encapsula dados e funcionalidades que operam sobre esses dados, permitindo a criação de novos tipos de dados definidos pelo usuário.
 
@@ -507,23 +539,66 @@ Para criar um objeto de uma classe, utilizamos a seguinte sintaxe:
 meu_carro = Carro('Toyota', 'Corolla', 2020)
 Aqui, meu_carro é um objeto da classe Carro com atributos marca, modelo e ano.
 ```
-## 8.3. Métodos e atributos
-## 8.4. Herança e polimorfismo
-A herança e o polimorfismo são conceitos poderosos na POO, permitindo a criação de sistemas flexíveis, reutilizáveis e facilmente mantidos. Utilizá-los corretamente é fundamental para o desenvolvimento de software robusto e eficiente.
+## Atributos e Métodos
 
-### Herança
-Herança é o mecanismo pelo qual uma classe (chamada de classe derivada ou subclasse) pode herdar atributos e métodos de outra classe (chamada de classe base ou superclasse). Isso permite a criação de uma hierarquia de classes e a reutilização de código.
 
-Vantagens:
+## Métodos Especiais
+Métodos especiais, também conhecidos como "métodos mágicos" ou "dunder methods" (double underscore), são métodos com nomes que começam e terminam com dois sublinhados (__). Eles permitem a definição de comportamentos especiais em classes.
 
-Reutilização de Código: Ao herdar de uma classe base, uma subclasse pode reutilizar os métodos e atributos da classe base sem precisar reescrever o código.
-Facilidade de Manutenção: Alterações no comportamento comum podem ser feitas na classe base e refletidas em todas as subclasses.
-Organização: Facilita a organização do código ao agrupar funcionalidades comuns em uma classe base.
-Implementação em Python:
+### Construtor (`__init__`)
+O método __init__ é o construtor da classe. Ele é chamado quando uma nova instância da classe é criada.
+
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+pessoa1 = Pessoa("Alice", 30)
+print(pessoa1.nome)  # Saída: Alice
+print(pessoa1.idade)  # Saída: 30
+```
+
+### Representação (`__str__` e `__repr__`)
+* `__str__`: Define a representação "amigável" do objeto, usada pelas funções str() e print().
+* `__repr__`: Define a representação "oficial" do objeto, usada pela função repr() e idealmente deve ser uma string que, se avaliada pelo interpretador, cria o mesmo objeto.
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def __str__(self):
+        return f"Pessoa(nome={self.nome}, idade={self.idade})"
+
+    def __repr__(self):
+        return f"Pessoa('{self.nome}', {self.idade})"
+
+pessoa1 = Pessoa("Alice", 30)
+print(str(pessoa1))  # Saída: Pessoa(nome=Alice, idade=30)
+print(repr(pessoa1))  # Saída: Pessoa('Alice', 30)
+```
+### Outros Métodos Especiais 
+* `__len__`: Define o comportamento da função `len()`.
+* `__getitem__`: Permite o acesso a itens de uma coleção usando colchetes (`[]`).
+* `__setitem__`: Permite a atribuição de valores a itens de uma coleção usando colchetes.
+* `__delitem__`: Permite a exclusão de itens de uma coleção usando colchetes.
+* `__iter__`: Define o comportamento do objeto.
+* `__next__`: Define a iteração sobre o objeto.
+* `__call__`: Permite que uma instância de uma classe seja chamada como uma função.
+
+## Herança
+É o mecanismo pelo qual uma classe (chamada de classe derivada ou subclasse) pode herdar atributos e métodos de outra classe (chamada de classe base ou superclasse). Isso permite a criação de uma hierarquia de classes e a reutilização de código.
+
+### Vantagens:
+* Reutilização de Código: Ao herdar de uma classe base, uma subclasse pode reutilizar os métodos e atributos da classe base sem precisar reescrever o código.
+* Facilidade de Manutenção: Alterações no comportamento comum podem ser feitas na classe base e refletidas em todas as subclasses.
+* Organização: Facilita a organização do código ao agrupar funcionalidades comuns em uma classe base.
+
+### Implementação em Python:
 Para implementar herança em Python, utilizamos a sintaxe class Subclasse(Superclasse):. A subclasse pode sobrescrever métodos da superclasse para alterar seu comportamento.
 
 Exemplo:
-
 ```python
 # Classe base
 class Animal:
@@ -554,16 +629,18 @@ print(meu_gato.fazer_som())  # Miau
 
 Neste exemplo, Cachorro e Gato herdam de Animal. Cada subclasse implementa o método fazer_som de maneira específica, proporcionando comportamentos diferentes para cada tipo de animal.
 
-### Polimorfismo
+## Polimorfismo
 É a capacidade de diferentes classes de serem tratadas como instâncias de uma mesma classe base. Ele permite que métodos com o mesmo nome em diferentes classes tenham comportamentos distintos.
 
 ### Tipos de Polimorfismo:
 
-### Polimorfismo em tempo de compilação (ou sobrecarga): Python não suporta sobrecarga de métodos de forma nativa como em outras linguagens (por exemplo, C++). Em Python, métodos não podem ter o mesmo nome e diferentes assinaturas.
+### Polimorfismo em tempo de compilação (ou sobrecarga)
+Python não suporta sobrecarga de métodos de forma nativa como em outras linguagens (por exemplo, C++). Em Python, métodos não podem ter o mesmo nome e diferentes assinaturas.
 
-### Polimorfismo em tempo de execução: Python suporta polimorfismo em tempo de execução, permitindo que métodos sejam sobrescritos nas subclasses.
+### Polimorfismo em tempo de execução
+Python suporta polimorfismo em tempo de execução, permitindo que métodos sejam sobrescritos nas subclasses.
 
-Implementação em Python:
+### Implementação em Python:
 Polimorfismo é frequentemente implementado utilizando herança e a sobrescrita de métodos. Classes derivadas podem ser tratadas como instâncias da classe base, e métodos específicos da classe derivada serão chamados.
 
 Exemplo:
@@ -595,7 +672,7 @@ Evitar Herança Múltipla: Pode complicar a hierarquia de classes e introduzir p
 Preferir Composição a Herança: Use composição para combinar comportamentos em vez de criar hierarquias complexas.
 Interface Clara: Defina métodos abstratos claros na classe base para garantir que subclasses implementem a funcionalidade necessária.
 
-## 8.5. Encapsulamento e Abstração
+## Encapsulamento e Abstração
 Encapsulamento e abstração são técnicas complementares na POO que ajudam a gerir a complexidade, melhorar a modularidade e proteger a integridade dos dados. O encapsulamento foca em esconder os detalhes internos de implementação e proteger os dados, enquanto a abstração se concentra em simplificar e generalizar conceitos para facilitar a interação com os objetos. Em conjunto, essas práticas promovem a criação de sistemas robustos, flexíveis e de fácil manutenção.
 
 ## Encapsulamento
