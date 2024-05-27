@@ -173,11 +173,11 @@ print(conjunto2)  # Saída: {3, 4, 5, 6}
 | `.pop()`                      | Remove e retorna um elemento arbitrário do conjunto. Levanta um erro `KeyError` se o conjunto estiver vazio. | `conjunto.pop()`                                          |
 | `.frozenset(iterable)`        | Retorna uma versão imutável de um conjunto.                                                    | `fconjunto = frozenset([1, 2, 3])`                                     |
 
-# 4. Funções
+# Funções
 
 Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas permitem modularizar programas, tornando o código mais organizado, legível e fácil de manter. As funções podem receber entradas (argumentos), processá-las e retornar um resultado.
 
-## - Definindo Funções
+## Definindo Funções
 Para definir uma função em Python, usamos a palavra-chave def, seguida pelo nome da função, parênteses que podem conter parâmetros e dois pontos. O corpo da função é indentado.
 
 ```python
@@ -193,7 +193,7 @@ def saudacao(nome):
 
 print(saudacao("João"))  # Saída: Olá, João!
 ```
-## - Funções com Parâmetros Padrão
+## Funções com Parâmetros Padrão
 Permitem definir valores padrão para parâmetros que podem ser omitidos ao chamar a função.
 
 ```python
@@ -204,7 +204,7 @@ print(saudacao("Maria"))          # Saída: Olá, Maria!
 print(saudacao("Pedro", "Oi"))    # Saída: Oi, Pedro!
 ```
 
-## - Funções com Múltiplos Parâmetros
+## Funções com Múltiplos Parâmetros
 Aceitam múltiplos argumentos e podem realizar operações mais complexas.
 
 ```python
@@ -214,7 +214,7 @@ def soma(a, b):
 print(soma(5, 7))  # Saída: 12
 ```
 
-## - Funções com Retorno Múltiplo
+## Funções com Retorno Múltiplo
 Podem retornar múltiplos valores usando tuplas.
 
 ```python
@@ -228,7 +228,7 @@ print(resultado_soma)       # Saída: 15
 print(resultado_diferenca)  # Saída: 5
 ```
 
-## - Funções Anônimas (Lambda)
+## Funções Anônimas (Lambda)
 São funções pequenas e sem nome, definidas usando a palavra-chave lambda. São úteis para funções curtas e simples.
 
 ```python
@@ -236,7 +236,7 @@ dobro = lambda x: x * 2
 print(dobro(4))  # Saída: 8
 ```
 
-## - Funções com Argumentos Variáveis
+## Funções com Argumentos Variáveis
 Aceitam um número variável de argumentos usando *args e **kwargs.
 
 ```python
@@ -360,6 +360,80 @@ with open('exemplo.txt', 'r') as file:
 ## 6.5. Manipulação de Arquivos de Texto
 ## 6.6. Manipulação de Arquivos Binários
 ## 6.7. Manipulação Avançada de Arquivos
+### Leitura de CSV
+Para manipular arquivos CSV, usamos o módulo csv. CSV é um formato comum para armazenamento de dados tabulares.
+
+```python
+import csv
+
+# Criando um arquivo CSV de exemplo
+with open('dados.csv', 'w', newline='') as file:
+    escritor = csv.writer(file)
+    escritor.writerow(['Nome', 'Idade'])
+    escritor.writerow(['Alice', 30])
+    escritor.writerow(['Bob', 25])
+
+# Lendo o arquivo CSV
+with open('dados.csv', 'r') as file:
+    leitor = csv.reader(file)
+    for linha in leitor:
+        print(linha)
+# Saída:
+# ['Nome', 'Idade']
+# ['Alice', 30]
+# ['Bob', 25]
+```
+
+### Escrita em CSV
+```python
+import csv
+
+dados = [
+    ['Nome', 'Idade'],
+    ['Alice', 30],
+    ['Bob', 25]
+]
+
+with open('dados.csv', 'w', newline='') as file:
+    escritor = csv.writer(file)
+    escritor.writerows(dados)
+```
+
+### Leitura de JSON
+Para manipular arquivos JSON, usamos o módulo json. JSON é um formato leve para intercâmbio de dados.
+```python
+import json
+
+# Criando um arquivo JSON de exemplo
+dados = {
+    'nome': 'Alice',
+    'idade': 30,
+    'cidade': 'São Paulo'
+}
+
+with open('dados.json', 'w') as file:
+    json.dump(dados, file, indent=4)
+
+# Lendo o arquivo JSON
+with open('dados.json', 'r') as file:
+    dados = json.load(file)
+    print(dados)
+# Saída:
+# {'nome': 'Alice', 'idade': 30, 'cidade': 'São Paulo'}
+```
+### Escrita em JSON
+```python
+import json
+
+dados = {
+    'nome': 'Alice',
+    'idade': 30,
+    'cidade': 'São Paulo'
+}
+
+with open('dados.json', 'w') as file:
+    json.dump(dados, file, indent=4)
+```    
 ## 6.8. Erros Comuns e Tratamento de Exceções
 Erros podem ocorrer durante a manipulação de arquivos. É importante tratar exceções para garantir que o programa lide adequadamente com esses erros. 
 
@@ -376,6 +450,14 @@ except IOError:
 * FileNotFoundError: Ocorre quando se tenta abrir um arquivo que não existe.
 * IOError: Erros gerais de leitura/escrita.
 * ValueError: Uso incorreto de argumentos nos métodos de leitura/escrita.
+* PermissionError: Ocorre quando se tenta abrir um arquivo sem as permissões adequadas para leitura ou gravação.
+* UnicodeDecodeError: Erro ao tentar decodificar os dados de um arquivo de texto usando codificação inadequada.
+
+### Boas Prãticas 
+* Sempre use blocos `try` e `except` para capturar e tratar possíveis erros.
+* Verifique se o arquivo existe antes de tentar abri-lo para leitura.
+* Seja específico nos blocos `except` para tratar diferentes tipos de erros de forma apropriada.
+* Use a codificação correta ao ler ou gravar arquivos de texto. Use o argumento encoding `open('exemplo.txt','r', encoding='utf-8')`.
 
 # 8. Programação Orientada a Objetos (POO)
 A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o software em "objetos", que são instâncias de "classes". Uma classe pode ser vista como um molde ou template que define os atributos (dados) e métodos (funções) que os objetos criados a partir dela terão.
