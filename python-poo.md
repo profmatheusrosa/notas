@@ -3,7 +3,8 @@
    - [Classes e objetos](#classes-e-objetos)
    - [Atributos e métodos](#atributos-e-métodos)
    - [Métodos Especiais](#métodos-especiais)
-   - [Herança e polimorfismo](#herança-e-polimorfismo)
+   - [Herança](#herança)
+   - [Polimorfismo](#polimorfismo)
    - [Encapsulamento e abstração](#encapsulamento-e-abstração)
 
 # Programação Orientada a Objetos (POO)
@@ -254,6 +255,11 @@ print(meu_gato.fazer_som())  # Miau
 
 Neste exemplo, Cachorro e Gato herdam de Animal. Cada subclasse implementa o método fazer_som de maneira específica, proporcionando comportamentos diferentes para cada tipo de animal.
 
+### Boas Práticas:
+* Evitar Herança Múltipla: Pode complicar a hierarquia de classes e introduzir problemas difíceis de depurar.
+* Preferir Composição a Herança: Use composição para combinar comportamentos em vez de criar hierarquias complexas.
+* Interface Clara: Defina métodos abstratos claros na classe base para garantir que subclasses implementem a funcionalidade necessária.
+
 ## Polimorfismo
 É a capacidade de diferentes classes de serem tratadas como instâncias de uma mesma classe base. Ele permite que métodos com o mesmo nome em diferentes classes tenham comportamentos distintos.
 
@@ -292,10 +298,6 @@ animais = [Cachorro(), Gato()]
 for animal in animais:
     emitir_som(animal)
 ```
-### Boas Práticas:
-Evitar Herança Múltipla: Pode complicar a hierarquia de classes e introduzir problemas difíceis de depurar.
-Preferir Composição a Herança: Use composição para combinar comportamentos em vez de criar hierarquias complexas.
-Interface Clara: Defina métodos abstratos claros na classe base para garantir que subclasses implementem a funcionalidade necessária.
 
 ## Encapsulamento e Abstração
 Encapsulamento e abstração são técnicas complementares na POO que ajudam a gerir a complexidade, melhorar a modularidade e proteger a integridade dos dados. O encapsulamento foca em esconder os detalhes internos de implementação e proteger os dados, enquanto a abstração se concentra em simplificar e generalizar conceitos para facilitar a interação com os objetos. Em conjunto, essas práticas promovem a criação de sistemas robustos, flexíveis e de fácil manutenção.
