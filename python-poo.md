@@ -47,8 +47,118 @@ meu_carro = Carro('Toyota', 'Corolla', 2020)
 Aqui, meu_carro é um objeto da classe Carro com atributos marca, modelo e ano.
 ```
 ## Atributos e Métodos
+### Atributos
+Os atributos são variáveis que armazenam informações sobre o objeto. Eles podem ser divididos em dois tipos principais:
 
+### Atributos de Instância: 
+São atributos que pertencem a uma instância específica da classe.
+### Atributos de Classe: 
+São atributos que pertencem à própria classe, compartilhados por todas as instâncias da classe.
 
+### Atributos de Instância
+Cada objeto instanciado a partir de uma classe pode ter diferentes valores para seus atributos de instância. Eles são definidos dentro do método __init__, que é um método especial chamado quando um novo objeto é criado.
+
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+# Criando instâncias da classe Pessoa
+p1 = Pessoa("Alice", 30)
+p2 = Pessoa("Bob", 25)
+
+print(p1.nome)  # Output: Alice
+print(p2.idade)  # Output: 25
+```
+
+### Atributos de Classe
+Atributos de classe são definidos diretamente dentro da classe, fora de qualquer método. Eles são compartilhados por todas as instâncias da classe.
+
+```python
+class Pessoa:
+    especie = "Homo sapiens"  # Atributo de classe
+
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+print(Pessoa.especie)  # Output: Homo sapiens
+
+p1 = Pessoa("Alice", 30)
+print(p1.especie)  # Output: Homo sapiens
+```
+### Métodos
+Métodos são funções definidas dentro de uma classe que descrevem os comportamentos dos objetos dessa classe. Eles podem acessar e modificar os atributos do objeto.
+
+### Métodos de Instância
+Métodos de instância são os mais comuns e têm acesso ao objeto que os chamou através do parâmetro self.
+
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def saudacao(self):
+        return f"Olá, meu nome é {self.nome} e eu tenho {self.idade} anos."
+
+p1 = Pessoa("Alice", 30)
+print(p1.saudacao())  # Output: Olá, meu nome é Alice e eu tenho 30 anos.
+```
+
+### Métodos de Classe
+Métodos de classe operam sobre a classe em si, e não sobre instâncias individuais. Eles são definidos usando o decorador @classmethod e recebem a própria classe como primeiro argumento, geralmente chamado de cls.
+
+```python
+class Pessoa:
+    especie = "Homo sapiens"
+
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    @classmethod
+    def alterar_especie(cls, nova_especie):
+        cls.especie = nova_especie
+
+Pessoa.alterar_especie("Homo sapiens sapiens")
+print(Pessoa.especie)  # Output: Homo sapiens sapiens
+```
+### Métodos Estáticos
+Métodos estáticos não operam nem sobre instâncias nem sobre a classe em si. Eles são definidos usando o decorador @staticmethod.
+
+```python
+class Pessoa:
+    @staticmethod
+    def e_maior_idade(idade):
+        return idade >= 18
+
+print(Pessoa.e_maior_idade(20))  # Output: True
+print(Pessoa.e_maior_idade(15))  # Output: False
+```
+### Propriedades (Properties)
+Propriedades são uma forma de encapsular o acesso a atributos de instância, permitindo que métodos sejam chamados como se fossem atributos. São definidas usando o decorador @property.
+
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self._nome = nome
+        self._idade = idade
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, novo_nome):
+        self._nome = novo_nome
+
+p1 = Pessoa("Alice", 30)
+print(p1.nome)  # Output: Alice
+p1.nome = "Bob"
+print(p1.nome)  # Output: Bob
+```
 ## Métodos Especiais
 Métodos especiais, também conhecidos como "métodos mágicos" ou "dunder methods" (double underscore), são métodos com nomes que começam e terminam com dois sublinhados (__). Eles permitem a definição de comportamentos especiais em classes.
 
