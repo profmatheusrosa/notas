@@ -254,7 +254,7 @@ imprimir_informacoes(nome="Ana", idade=25)
 # nome: Ana
 # idade: 25
 ```
-# 6. Manipulação de Arquivos
+# Manipulação de Arquivos
 
 ## 6.1. Abertura de arquivos
 Para manipular um arquivo, primeiro precisamos abri-lo. A função `open()` é utilizada para isso. 
@@ -271,6 +271,14 @@ file = open('caminho_do_arquivo', 'modo')
 ## 6.2. Leitura de arquivos
 Depois de abrir o arquivo, podemos ler seu conteúdo.
 
+Considere o arquivo de texto chamado `exemplo.txt` com o seguinte conteúdo:
+```
+Linha 1
+Linha 2
+Linha 3
+Linha 4
+Linha 5
+```
 ### Métodos de Leitura
 * `read(size)`: Lê o arquivo inteiro ou até o tamanho especificado.
 * `readline()`: Lê uma linha do arquivo.
@@ -287,7 +295,7 @@ file.close()
 ```python
 file = open('exemplo.txt', 'r')
 for linha in file:
-    print(linha, end='')
+    print(linha, end='') # end='' é usado para evitar duplicação de novas linhas
 file.close()
 ```
 ### Leitura com `readline()`
@@ -299,6 +307,15 @@ while linha:
     linha = file.readline()
 file.close()
 ```
+### Leitura com `readlines()`
+```python
+file = open('exemplo.txt', 'r')
+linhas = file.readlines()
+for linha in linhas:
+    print(linha, end='')
+file.close()
+```
+
 ## 6.3. Escrita em arquivos
 Para escrever em um arquivo, devemos abrir o arquivo em modo de escrita. Se o arquivo não existir, ele será criado.
 ### Métodos de Escrita 
