@@ -285,6 +285,30 @@ multilinha = """Esta é uma string
 multilinha, que pode conter
 várias linhas de texto."""
 ```
+## Métodos Comuns
+| Função                         | Descrição                                             | Exemplo                                                         |
+|--------------------------------|-------------------------------------------------------|-----------------------------------------------------------------|
+| `str.lower()`                  | Converte todos os caracteres para minúsculas          | `"Python".lower() -> "python"`                                  |
+| `str.upper()`                  | Converte todos os caracteres para maiúsculas          | `"Python".upper() -> "PYTHON"`                                  |
+| `str.capitalize()`             | Converte o primeiro caractere para maiúscula          | `"python".capitalize() -> "Python"`                             |
+| `str.title()`                  | Converte o primeiro caractere de cada palavra para maiúscula | `"python é incrível".title() -> "Python É Incrível"`             |
+| `str.strip()`                  | Remove espaços em branco do início e do fim           | `"  Olá, Mundo!  ".strip() -> "Olá, Mundo!"`                    |
+| `str.rstrip()`                 | Remove espaços em branco do fim                       | `"  Olá, Mundo!  ".rstrip() -> "  Olá, Mundo!"`                 |
+| `str.lstrip()`                 | Remove espaços em branco do início                    | `"  Olá, Mundo!  ".lstrip() -> "Olá, Mundo!  "`                 |
+| `str.replace(old, new)`        | Substitui todas as ocorrências de uma substring       | `"Olá, Mundo!".replace("Mundo", "Python") -> "Olá, Python!"`    |
+| `str.split(sep=None)`          | Divide a string em uma lista de substrings            | `"Olá, Mundo!".split() -> ["Olá,", "Mundo!"]`                   |
+| `str.join(iterable)`           | Junta elementos de um iterável em uma string          | `', '.join(['Olá', 'Python']) -> "Olá, Python"`                 |
+| `str.startswith(prefix)`       | Verifica se a string começa com o prefixo especificado | `"Python".startswith("Py") -> True`                             |
+| `str.endswith(suffix)`         | Verifica se a string termina com o sufixo especificado | `"Python".endswith("on") -> True`                               |
+| `str.find(sub)`                | Retorna o índice da primeira ocorrência da substring  | `"Python é incrível".find("é") -> 7`                            |
+| `str.count(sub)`               | Conta o número de ocorrências da substring            | `"Python é incrível".count("i") -> 2`                           |
+| `str.format(*args, **kwargs)`  | Formata a string usando placeholders                  | `"Nome: {}, Idade: {}".format("Maria", 25) -> "Nome: Maria, Idade: 25"` |
+| `f'string'`                    | Formata a string usando f-strings                     | `f"Nome: {'Maria'}, Idade: {25}" -> "Nome: Maria, Idade: 25"`   |
+| `str + str`                    | Concatena duas strings                                | `"Olá" + ", " + "Mundo!" -> "Olá, Mundo!"`                      |
+| `str * n`                      | Repete a string n vezes                                | `"A" * 5 -> "AAAAA"`                                            |
+| `str[índice]`                  | Acessa o caractere na posição indicada                | `"Python"[0] -> "P"`                                            |
+| `str[início:fim:passo]`        | Fatiamento: retorna a subseção da string              | `"Python"[1:4] -> "yth"`                                        |
+
 
 # Manipulação de Arquivos
 
