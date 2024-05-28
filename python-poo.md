@@ -11,20 +11,16 @@
 A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o software em "objetos", que são instâncias de "classes". Uma classe pode ser vista como um molde ou template que define os atributos (dados) e métodos (funções) que os objetos criados a partir dela terão.
 
 ## Princípios Fundamentais da POO
-### Abstração:
-Abstração é o processo de simplificar a complexidade do software, focando nos aspectos essenciais de uma entidade, ocultando detalhes desnecessários.
+* Abstração: É o processo de simplificar a complexidade do software, focando nos aspectos essenciais de uma entidade, ocultando detalhes desnecessários.
 Exemplo: Ao modelar um carro, a abstração poderia focar nos atributos "marca", "modelo" e "ano", sem se preocupar com detalhes como o tipo de material usado nos bancos.
 
-### Encapsulamento:
-Encapsulamento é o princípio de esconder os detalhes internos de um objeto e expor apenas o que é necessário para a interação com outros objetos.
+* Encapsulamento: É o princípio de esconder os detalhes internos de um objeto e expor apenas o que é necessário para a interação com outros objetos.
 Exemplo: Um objeto ContaBancaria pode esconder seu saldo com um atributo privado e fornecer métodos públicos depositar e sacar para manipular esse saldo.
 
-### Herança:
-Herança permite que uma classe (classe filha) herde atributos e métodos de outra classe (classe pai), promovendo a reutilização de código.
+* Herança: Permite que uma classe (classe filha) herde atributos e métodos de outra classe (classe pai), promovendo a reutilização de código.
 Exemplo: Uma classe Veiculo pode ser a classe pai de Carro e Moto, onde ambos herdam atributos como marca e modelo.
 
-### Polimorfismo:
-Polimorfismo permite que diferentes classes sejam tratadas através da mesma interface. Métodos com o mesmo nome podem ter diferentes implementações.
+* Polimorfismo: Permite que diferentes classes sejam tratadas através da mesma interface. Métodos com o mesmo nome podem ter diferentes implementações.
 Exemplo: Um método fazer_som pode ser implementado de formas diferentes em classes Cachorro e Gato.
 
 A POO é um paradigma poderoso e amplamente utilizado que facilita a criação de software modular, reutilizável e fácil de manter. Comparado a outros paradigmas, como a programação procedural e funcional, a POO oferece uma maneira intuitiva de modelar e interagir com entidades complexas, refletindo melhor a maneira como pensamos sobre o mundo real. No entanto, a escolha do paradigma deve ser baseada nas necessidades específicas do projeto e nas preferências da equipe de desenvolvimento.
@@ -214,7 +210,7 @@ print(repr(pessoa1))  # Saída: Pessoa('Alice', 30)
 * `__call__`: Permite que uma instância de uma classe seja chamada como uma função.
 
 ## Herança
-É o mecanismo pelo qual uma classe (chamada de classe derivada ou subclasse) pode herdar atributos e métodos de outra classe (chamada de classe base ou superclasse). Isso permite a criação de uma hierarquia de classes e a reutilização de código.
+É o mecanismo pelo qual uma classe (chamada de classe derivada ou subclasse) pode herdar atributos e métodos de outra classe (chamada de classe base ou superclasse). Isso permite a criação de uma hierarquia de classes que representam relações "é-um" entre objetose e a reutilização de código.
 
 ### Vantagens:
 * Reutilização de Código: Ao herdar de uma classe base, uma subclasse pode reutilizar os métodos e atributos da classe base sem precisar reescrever o código.
@@ -224,7 +220,6 @@ print(repr(pessoa1))  # Saída: Pessoa('Alice', 30)
 ### Implementação em Python:
 Para implementar herança em Python, utilizamos a sintaxe class Subclasse(Superclasse):. A subclasse pode sobrescrever métodos da superclasse para alterar seu comportamento.
 
-Exemplo:
 ```python
 # Classe base
 class Animal:
@@ -254,6 +249,88 @@ print(meu_gato.fazer_som())  # Miau
 ```
 
 Neste exemplo, Cachorro e Gato herdam de Animal. Cada subclasse implementa o método fazer_som de maneira específica, proporcionando comportamentos diferentes para cada tipo de animal.
+
+### Herança Simples
+Herança simples ocorre quando uma classe deriva diretamente de outra classe. Isso é comum e facilita a organização e a estruturação do código, permitindo que a subclasse herde comportamentos e características da superclasse.
+
+```python
+class Veiculo:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def exibir_informacoes(self):
+        return f'{self.marca} {self.modelo}'
+
+class Carro(Veiculo):
+    def __init__(self, marca, modelo, ano):
+        super().__init__(marca, modelo)  # Chama o construtor da superclasse
+        self.ano = ano
+
+    def exibir_informacoes(self):
+        info = super().exibir_informacoes()  # Chama o método da superclasse
+        return f'{info}, Ano: {self.ano}'
+
+meu_carro = Carro('Toyota', 'Corolla', 2020)
+print(meu_carro.exibir_informacoes())  # Output: Toyota Corolla, Ano: 2020
+```
+Neste exemplo, a classe Carro herda da classe Veiculo. O método super().__init__(marca, modelo) é usado para chamar o construtor da superclasse e inicializar os atributos marca e modelo.
+
+### Uso de super()
+A função super() é utilizada para acessar métodos da superclasse a partir da subclasse. Ela é particularmente útil para invocar o construtor da superclasse e reutilizar métodos que podem ser sobrescritos na subclasse.
+
+### Detalhamento do uso de super():
+* Construtor: Invocar o construtor da superclasse para garantir que os atributos da superclasse sejam inicializados.
+* Métodos: Chamar métodos da superclasse que foram sobrescritos na subclasse, permitindo estender ou modificar a funcionalidade.
+
+### Exemplo de Uso de super() em Métodos:
+```python
+class Animal:
+    def fazer_som(self):
+        return 'Som do animal'
+
+class Cachorro(Animal):
+    def fazer_som(self):
+        som_animal = super().fazer_som()
+        return f'{som_animal}, Au Au'
+
+cachorro = Cachorro()
+print(cachorro.fazer_som())  # Output: Som do animal, Au Au
+```
+Neste exemplo, super().fazer_som() chama o método fazer_som da superclasse Animal antes de adicionar comportamento adicional na subclasse Cachorro.
+
+### Herança Múltipla
+Herança múltipla ocorre quando uma classe deriva de mais de uma classe base. Embora possa adicionar flexibilidade e reuso de código, herança múltipla também pode levar a complexidades, como o Problema do Diamante, onde a hierarquia de herança se torna ambígua.
+
+```python
+class Terrestre:
+    def andar(self):
+        return 'Andando no chão'
+
+class Aquatico:
+    def nadar(self):
+        return 'Nadando na água'
+
+class Anfibio(Terrestre, Aquatico):
+    def viver(self):
+        andar = self.andar()
+        nadar = self.nadar()
+        return f'{andar} e {nadar}'
+
+sapo = Anfibio()
+print(sapo.viver())  # Output: Andando no chão e Nadando na água
+```
+Neste exemplo, a classe Anfibio herda de Terrestre e Aquatico, combinando comportamentos de ambas as classes base.
+
+### Resolução de Método (MRO):
+Python resolve a ordem de busca dos métodos em herança múltipla usando o Método de Resolução de Ordem (MRO). O MRO determina a sequência em que as superclasses são consultadas quando um método é chamado.
+
+### Verificação da MRO:
+```python
+print(Anfibio.mro())
+# Output: [<class '__main__.Anfibio'>, <class '__main__.Terrestre'>, <class '__main__.Aquatico'>, <class 'object'>]
+```
+A ordem MRO pode ser visualizada com o método mro() da classe, mostrando a sequência de classes que Python segue ao procurar métodos.
 
 ### Boas Práticas:
 * Evitar Herança Múltipla: Pode complicar a hierarquia de classes e introduzir problemas difíceis de depurar.
