@@ -17,10 +17,10 @@ Exemplo: Ao modelar um carro, a abstração poderia focar nos atributos "marca",
 * Encapsulamento: É o princípio de esconder os detalhes internos de um objeto e expor apenas o que é necessário para a interação com outros objetos.
 Exemplo: Um objeto ContaBancaria pode esconder seu saldo com um atributo privado e fornecer métodos públicos depositar e sacar para manipular esse saldo.
 
-* Herança: Permite que uma classe (classe filha) herde atributos e métodos de outra classe (classe pai), promovendo a reutilização de código.
+* Heranças: Permite que uma classe (classe filha) herde atributos e métodos de outra classe (classe pai), promovendo a reutilização de código.
 Exemplo: Uma classe Veiculo pode ser a classe pai de Carro e Moto, onde ambos herdam atributos como marca e modelo.
 
-* Polimorfismo: Permite que diferentes classes sejam tratadas através da mesma interface. Métodos com o mesmo nome podem ter diferentes implementações.
+* Polimorfismos: Permite que diferentes classes sejam tratadas através da mesma interface. Métodos com o mesmo nome podem ter diferentes implementações.
 Exemplo: Um método fazer_som pode ser implementado de formas diferentes em classes Cachorro e Gato.
 
 A POO é um paradigma poderoso e amplamente utilizado que facilita a criação de software modular, reutilizável e fácil de manter. Comparado a outros paradigmas, como a programação procedural e funcional, a POO oferece uma maneira intuitiva de modelar e interagir com entidades complexas, refletindo melhor a maneira como pensamos sobre o mundo real. No entanto, a escolha do paradigma deve ser baseada nas necessidades específicas do projeto e nas preferências da equipe de desenvolvimento.
