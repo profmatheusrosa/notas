@@ -1,11 +1,11 @@
 - [Programação Orientada a Objetos (POO)](#programação-orientada-a-objetos-poo)
    - [Princípios Fundamentais da POO](#principios-fundamentais-da-poo)
-   - [Classes e objetos](#classes-e-objetos)
-   - [Atributos e métodos](#atributos-e-métodos)
-   - [Métodos Especiais](#métodos-especiais)
-   - [Herança](#herança)
-   - [Polimorfismo](#polimorfismo)
-   - [Encapsulamento e abstração](#encapsulamento-e-abstração)
+- [Classes e objetos](#classes-e-objetos)
+- [Atributos e métodos](#atributos-e-métodos)
+- [Métodos Especiais](#métodos-especiais)
+- [Herança](#herança)
+- [Polimorfismo](#polimorfismo)
+- [Encapsulamento e abstração](#encapsulamento-e-abstração)
 
 # Programação Orientada a Objetos (POO)
 A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o software em "objetos", que são instâncias de "classes". Uma classe pode ser vista como um molde ou template que define os atributos (dados) e métodos (funções) que os objetos criados a partir dela terão.
@@ -25,11 +25,11 @@ Exemplo: Um método fazer_som pode ser implementado de formas diferentes em clas
 
 A POO é um paradigma poderoso e amplamente utilizado que facilita a criação de software modular, reutilizável e fácil de manter. Comparado a outros paradigmas, como a programação procedural e funcional, a POO oferece uma maneira intuitiva de modelar e interagir com entidades complexas, refletindo melhor a maneira como pensamos sobre o mundo real. No entanto, a escolha do paradigma deve ser baseada nas necessidades específicas do projeto e nas preferências da equipe de desenvolvimento.
 
-## Classes e objetos
-### Classe
+# Classes e objetos
+## Classe
 Uma classe é um modelo ou um molde que define a estrutura e o comportamento (atributos e métodos) que os objetos criados a partir dessa classe terão. Ela encapsula dados e funcionalidades que operam sobre esses dados, permitindo a criação de novos tipos de dados definidos pelo usuário.
 
-Definição de uma Classe
+### Definição de uma Classe
 Uma classe é definida usando a palavra-chave class, seguida pelo nome da classe.
 
 ```python
@@ -41,18 +41,18 @@ class Carro:
         self.ano = ano  # Atributo de instância
 ```
 
-### Objeto
+## Objeto
 Um objeto é uma instância de uma classe. Quando uma classe é definida, nenhum espaço na memória é alocado até que um objeto dessa classe seja instanciado. Um objeto é uma entidade que contém um estado (valores de atributos) e um comportamento (métodos).
 
-Criação de um Objeto
+### Criação de um Objeto
 Para criar um objeto de uma classe, utilizamos a seguinte sintaxe:
 
 ```python
 meu_carro = Carro('Toyota', 'Corolla', 2020)
 Aqui, meu_carro é um objeto da classe Carro com atributos marca, modelo e ano.
 ```
-## Atributos e Métodos
-### Atributos
+# Atributos e Métodos
+## Atributos
 Os atributos são variáveis que armazenam informações sobre o objeto. Eles podem ser divididos em dois tipos principais:
 
 ### Atributos de Instância: 
@@ -93,10 +93,10 @@ print(Pessoa.especie)  # Output: Homo sapiens
 p1 = Pessoa("Alice", 30)
 print(p1.especie)  # Output: Homo sapiens
 ```
-### Métodos
+## Métodos
 Métodos são funções definidas dentro de uma classe que descrevem os comportamentos dos objetos dessa classe. Eles podem acessar e modificar os atributos do objeto.
 
-### Métodos de Instância
+## Métodos de Instância
 Métodos de instância são os mais comuns e têm acesso ao objeto que os chamou através do parâmetro self.
 
 ```python
@@ -112,7 +112,7 @@ p1 = Pessoa("Alice", 30)
 print(p1.saudacao())  # Output: Olá, meu nome é Alice e eu tenho 30 anos.
 ```
 
-### Métodos de Classe
+## Métodos de Classe
 Métodos de classe operam sobre a classe em si, e não sobre instâncias individuais. Eles são definidos usando o decorador @classmethod e recebem a própria classe como primeiro argumento, geralmente chamado de cls.
 
 ```python
@@ -130,7 +130,7 @@ class Pessoa:
 Pessoa.alterar_especie("Homo sapiens sapiens")
 print(Pessoa.especie)  # Output: Homo sapiens sapiens
 ```
-### Métodos Estáticos
+## Métodos Estáticos
 Métodos estáticos não operam nem sobre instâncias nem sobre a classe em si. Eles são definidos usando o decorador @staticmethod.
 
 ```python
@@ -142,7 +142,7 @@ class Pessoa:
 print(Pessoa.e_maior_idade(20))  # Output: True
 print(Pessoa.e_maior_idade(15))  # Output: False
 ```
-### Propriedades (Properties)
+## Propriedades (Properties)
 Propriedades são uma forma de encapsular o acesso a atributos de instância, permitindo que métodos sejam chamados como se fossem atributos. São definidas usando o decorador @property.
 
 ```python
@@ -209,7 +209,7 @@ print(repr(pessoa1))  # Saída: Pessoa('Alice', 30)
 * `__next__`: Define a iteração sobre o objeto.
 * `__call__`: Permite que uma instância de uma classe seja chamada como uma função.
 
-## Herança
+# Herança
 É o mecanismo pelo qual uma classe (chamada de classe derivada ou subclasse) pode herdar atributos e métodos de outra classe (chamada de classe base ou superclasse). Isso permite a criação de uma hierarquia de classes que representam relações "é-um" entre objetose e a reutilização de código.
 
 ### Vantagens:
@@ -337,7 +337,7 @@ A ordem MRO pode ser visualizada com o método mro() da classe, mostrando a sequ
 * Preferir Composição a Herança: Use composição para combinar comportamentos em vez de criar hierarquias complexas.
 * Interface Clara: Defina métodos abstratos claros na classe base para garantir que subclasses implementem a funcionalidade necessária.
 
-## Polimorfismo
+# Polimorfismo
 É a capacidade de diferentes classes de serem tratadas como instâncias de uma mesma classe base. Ele permite que métodos com o mesmo nome em diferentes classes tenham comportamentos distintos.
 
 ### Tipos de Polimorfismo:
@@ -376,11 +376,8 @@ for animal in animais:
     emitir_som(animal)
 ```
 
-## Encapsulamento e Abstração
-Encapsulamento e abstração são técnicas complementares na POO que ajudam a gerir a complexidade, melhorar a modularidade e proteger a integridade dos dados. O encapsulamento foca em esconder os detalhes internos de implementação e proteger os dados, enquanto a abstração se concentra em simplificar e generalizar conceitos para facilitar a interação com os objetos. Em conjunto, essas práticas promovem a criação de sistemas robustos, flexíveis e de fácil manutenção.
-
-## Encapsulamento
-Refere-se à prática de restringir o acesso direto aos dados de um objeto e permitir que esses dados sejam manipulados apenas por métodos definidos. Em Python, isso é conseguido usando convenções de nomenclatura e mecanismos de controle de acesso, como atributos e métodos privados.
+# Encapsulamento
+Foca em esconder os detalhes internos de implementação e proteger os dados, utiliza a prática de restringir o acesso direto aos dados de um objeto e permitir que esses dados sejam manipulados apenas por métodos definidos. Em Python, isso é conseguido usando convenções de nomenclatura e mecanismos de controle de acesso, como atributos e métodos privados.
 
 ### Objetivo:
 Proteger o estado interno do objeto contra modificações não controladas.
@@ -444,7 +441,7 @@ conta.saldo = 1200
 print(conta.saldo)  # Saída: 1200
 ```
 
-## Abstração 
+# Abstração 
 É o processo de simplificação de sistemas complexos através da ocultação de detalhes desnecessários e exposição apenas das partes essenciais. Em POO, abstração permite que os desenvolvedores definam classes e objetos que representam conceitos gerais, enquanto ocultam os detalhes de implementação.
 
 ### Objetivo:
