@@ -96,6 +96,19 @@ print(p1.especie)  # Output: Homo sapiens
 ## Métodos
 Métodos são funções definidas dentro de uma classe que descrevem os comportamentos dos objetos dessa classe. Eles podem acessar e modificar os atributos do objeto.
 
+### Método Construtor (`__init__`)
+O método __init__ é o construtor da classe. Ele é chamado quando uma nova instância da classe é criada.
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+pessoa1 = Pessoa("Alice", 30)
+print(pessoa1.nome)  # Saída: Alice
+print(pessoa1.idade)  # Saída: 30
+```
+
 ## Métodos de Instância
 Métodos de instância são os mais comuns e têm acesso ao objeto que os chamou através do parâmetro self.
 
@@ -167,19 +180,41 @@ print(p1.nome)  # Output: Bob
 ## Métodos Especiais
 Métodos especiais, também conhecidos como "métodos mágicos" ou "dunder methods" (double underscore), são métodos com nomes que começam e terminam com dois sublinhados (__). Eles permitem a definição de comportamentos especiais em classes.
 
-### Construtor (`__init__`)
-O método __init__ é o construtor da classe. Ele é chamado quando uma nova instância da classe é criada.
+Os métodos __new__ e __init__ são ambos utilizados na criação e inicialização de objetos em Python, mas eles têm papéis distintos no processo de instância de uma classe. Vamos detalhar as diferenças e semelhanças entre esses dois métodos.
+
+### Método `__new__`
+O método __new__ é responsável por criar uma nova instância de uma classe. Ele é chamado antes do método __init__ e é o primeiro passo na construção de um objeto. __new__ é um método estático que recebe a própria classe como o primeiro argumento.
+
+### Características do __new__
+* Função Primária: Alocar memória e retornar uma nova instância da classe.
+* Chamada Automática: Chamado automaticamente quando uma nova instância é criada.
+* Retorno Necessário: Deve retornar uma instância da classe; caso contrário, o processo de criação do objeto não prossegue.
+* Método Estático: Recebe a própria classe como o primeiro argumento (cls).
 
 ```python
-class Pessoa:
-    def __init__(self, nome, idade):
-        self.nome = nome
-        self.idade = idade
+class MinhaClasse:
+    def __new__(cls, *args, **kwargs):
+        print("Chamando __new__")
+        instance = super(MinhaClasse, cls).__new__(cls)
+        return instance
 
-pessoa1 = Pessoa("Alice", 30)
-print(pessoa1.nome)  # Saída: Alice
-print(pessoa1.idade)  # Saída: 30
+    def __init__(self, valor):
+        print("Chamando __init__")
+        self.valor = valor
+
+obj = MinhaClasse(10)
+# Saída:
+# Chamando __new__
+# Chamando __init__
 ```
+### Método `__init__`
+O método __init__ é o inicializador da instância de uma classe. Ele é chamado logo após a criação do objeto pela chamada a __new__. O método __init__ é usado para inicializar os atributos da instância.
+
+### Características do `__init__`
+* Função Primária: Inicializar a instância da classe com valores específicos.
+* Chamada Automática: Chamado automaticamente após a criação da instância.
+* Não Retorna: Não deve retornar nada (None é retornado implicitamente).
+* Método de Instância: Recebe a instância recém-criada como o primeiro argumento (self).
 
 ### Representação (`__str__` e `__repr__`)
 * `__str__`: Define a representação "amigável" do objeto, usada pelas funções str() e print().
@@ -380,9 +415,58 @@ for animal in animais:
 Foca em esconder os detalhes internos de implementação e proteger os dados, utiliza a prática de restringir o acesso direto aos dados de um objeto e permitir que esses dados sejam manipulados apenas por métodos definidos. Em Python, isso é conseguido usando convenções de nomenclatura e mecanismos de controle de acesso, como atributos e métodos privados.
 
 ### Objetivo:
-Proteger o estado interno do objeto contra modificações não controladas.
-Fornecer uma interface pública clara e estável para a interação com o objeto.
-Aumentar a modularidade e facilitar a manutenção do código.
+* Proteger o estado interno do objeto contra modificações não controladas.
+* Fornecer uma interface pública clara e estável para a interação com o objeto.
+* Aumentar a modularidade e facilitar a manutenção do código.
+
+### Modificadores de Acesso: Público, Protegido e Privado
+Em Python, os modificadores de acesso não são implementados como em outras linguagens como Java ou C++, onde há palavras-chave específicas para definir a visibilidade dos atributos e métodos. Em vez disso, Python utiliza convenções de nomenclatura para indicar o nível de acesso dos membros de uma classe:
+
+### Público: 
+Atributos e métodos públicos são acessíveis de qualquer lugar. Em Python, todos os membros são públicos por padrão.
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome  # público
+        self.idade = idade  # público
+
+pessoa = Pessoa("João", 30)
+print(pessoa.nome)  # Acessível
+print(pessoa.idade)  # Acessível
+```
+
+### Protegido: 
+Atributos e métodos protegidos são indicados com um único underscore (_). Por convenção, isso sugere que o membro não deve ser acessado fora da classe ou subclasses. No entanto, a linguagem não impõe esta restrição.
+
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self._nome = nome  # protegido
+        self._idade = idade  # protegido
+
+pessoa = Pessoa("João", 30)
+print(pessoa._nome)  # Acessível, mas desencorajado
+print(pessoa._idade)  # Acessível, mas desencorajado
+```
+
+### Privado: 
+Atributos e métodos privados são indicados com dois underscores (__). Isso resulta em name mangling, onde o nome do atributo é reescrito internamente para incluir o nome da classe, tornando mais difícil, mas não impossível, acessar de fora da classe.
+
+```python
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.__nome = nome  # privado
+        self.__idade = idade  # privado
+
+    def mostrar_informacoes(self):
+        return f'{self.__nome}, {self.__idade} anos'
+
+pessoa = Pessoa("João", 30)
+# print(pessoa.__nome)  # Acessível diretamente, resultará em erro
+print(pessoa._Pessoa__nome)  # Acessível através de name mangling
+print(pessoa.mostrar_informacoes())  # Método público que acessa membros privados   
+```
+
 Atributos Privados:
 Em Python, atributos privados são indicados por um prefixo de sublinhado duplo __. Essa convenção sugere que esses atributos não devem ser acessados diretamente fora da classe.
 
