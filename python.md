@@ -20,8 +20,8 @@
    - [Funções anônimas (lambda)](#funções-anônimas-lambda)
    - [Escopo de variáveis (global e local)](#escopo-de-variáveis-global-e-local)
 5. [Manipulação de Strings](#manipulação-de-strings)
-   - [Métodos de strings (fatiamento, substituição, busca, etc.)](#métodos-de-strings-fatiamento-substituição-busca-etc)
-   - [Formatação de strings (f-strings, format(), %)](#formatação-de-strings-f-strings-format)
+   - [Formatação de Strings](#formatação-de-strings)
+   - [Métodos Comuns](#métodos-comuns)
 6. [Manipulação de Arquivos](#manipulação-de-arquivos)
    - [Leitura e escrita em arquivos](#leitura-e-escrita-em-arquivos)
    - [Manipulação de arquivos de texto e binários](#manipulação-de-arquivos-de-texto-e-binários)
@@ -256,6 +256,43 @@ imprimir_informacoes(nome="Ana", idade=25)
 # idade: 25
 ```
 # Manipulação de Strings
+## Criação de Strings
+Strings em Python podem ser criadas usando aspas simples (`'`), aspas duplas (`"`), aspas triplas simples (`'''`) ou aspas triplas duplas (`"""`).
+
+```python
+str1 = 'Olá, Mundo!'
+str2 = "Olá, Mundo!"
+str3 = '''Olá, 
+Mundo!'''
+str4 = """Olá, 
+Mundo!"""
+```
+### Características das Strings
+* Imutabilidade: Uma vez criada, uma string não pode ser alterada. Qualquer operação que modifique uma string cria uma nova string.
+* Acesso: Pode-se acessar caracteres individuais em uma string usando índices. O índice em Python é baseado em zero.
+
+### Fatiamento (Slicing)
+O fatiamento permite acessar uma subseção de uma string usando a notação [início:fim:passo].
+```python
+s = "Python"
+print(s[1:4])    # yth
+print(s[:2])     # Py
+print(s[3:])     # hon
+print(s[::2])    # Pto
+print(s[::-1])   # nohtyP (inverso da string)
+````
+### Operações com Strings
+* Concatenar Strings:
+```python
+s1 = "Olá"
+s2 = "Mundo"
+s3 = s1 + ", " + s2 + "!"  # "Olá, Mundo!"
+```
+* Repetir Strings:
+```python
+s = "A" * 5  # "AAAAA"
+```
+
 ## Formatação de Strings
 ### Método `format()`
 Utiliza chaves {} como placeholders para valores.
@@ -276,6 +313,12 @@ idade = 30
 mensagem = f"Meu nome é {nome} e eu tenho {idade} anos."
 # "Meu nome é João e eu tenho 30 anos."
 ```
+### Operador `%`:
+```python
+nome = "Maria"
+idade = 25
+print("Nome: %s, Idade: %d" % (nome, idade))  # Nome: Maria, Idade: 25
+```
 
 ### Strings Multilinha
 Strings multilinha são úteis para longos blocos de texto.
@@ -290,7 +333,7 @@ várias linhas de texto."""
 |--------------------------------|-------------------------------------------------------|-----------------------------------------------------------------|
 | `str.lower()`                  | Converte todos os caracteres para minúsculas          | `"Python".lower() -> "python"`                                  |
 | `str.upper()`                  | Converte todos os caracteres para maiúsculas          | `"Python".upper() -> "PYTHON"`                                  |
-| `str.capitalize()`             | Converte o primeiro caractere para maiúscula          | `"python".capitalize() -> "Python"`                             |
+| `str.capitalize()`             | Converte o primeiro caractere para maiúscula e restante para minúsculas | `"python".capitalize() -> "Python"`                             |
 | `str.title()`                  | Converte o primeiro caractere de cada palavra para maiúscula | `"python é incrível".title() -> "Python É Incrível"`             |
 | `str.strip()`                  | Remove espaços em branco do início e do fim           | `"  Olá, Mundo!  ".strip() -> "Olá, Mundo!"`                    |
 | `str.rstrip()`                 | Remove espaços em branco do fim                       | `"  Olá, Mundo!  ".rstrip() -> "  Olá, Mundo!"`                 |
