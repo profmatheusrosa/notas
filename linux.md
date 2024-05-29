@@ -97,6 +97,9 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 | **vi** | Editor de texto avançado no terminal. | `vi arquivo.txt` |
 | `vim` | Versão melhorada do vi com mais funcionalidades. | `vim arquivo.txt` |
 
+# Permissões de Arquivos
+
+
 # Editores de Texto no Terminal
 ## Editor Nano
 ### Comando para abrir arquivos:
@@ -119,3 +122,16 @@ vi arquivo.txt`
 * Salvar e sair: :wq
 * Sair sem salvar: :q!
 * Navegar no texto: h, j, k, l (esquerda, baixo, cima, direita)
+
+# Filesystems
+
+# Gerência de Usuários
+- [ ] adduser
+- [ ] useradd
+- [ ] userdel
+- [ ] deluser
+
+# Gerência de Memória e Processos
+# Gerência do Kernel
+# LVM (Logical Volume Manager)
+# Gerência de Sistema e Diversos
