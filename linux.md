@@ -132,6 +132,21 @@ vi arquivo.txt`
 - [ ] deluser
 
 # Gerência de Memória e Processos
+- [ ] 
+- [ ] nohup
+- [ ] ps
+- [ ] top
+- [ ] jobs
+- [ ] bg
+- [ ] fg
+- [ ] free
+- [ ] nice
+- [ ] renice
+- [ ] kill
+- [ ] killall
+- [ ] swapon
+- [ ] swapoff
+
 # Gerência do Kernel
 # LVM (Logical Volume Manager)
 # Gerência de Sistema e Diversos
