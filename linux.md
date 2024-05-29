@@ -1,3 +1,21 @@
+# Sumário
+
+- [Filosofia do Software Livre e de Código Aberto](#filosofia-do-software-livre-e-de-código-aberto)
+- [Interface Gráfica (GUI) e Linha de Comando (CLI)](#interface-gráfica-gui-e-linha-de-comando-cli)
+- [Estrutura do Sistema de Arquivos Linux](#estrutura-do-sistema-de-arquivos-linux)
+- [Comandos para Navegação no Sistema de Arquivos](#comandos-para-navegação-no-sistema-de-arquivos)
+- [Permissões de Arquivos](#permissões-de-arquivos)
+- [Gerência de Arquivos e Diretórios](#gerência-de-arquivos-e-diretórios)
+- [Editores de Texto no Terminal](#editores-de-texto-no-terminal)
+- [Filesystems](#filesystems)
+- [Gerência de Usuários](#gerência-de-usuários)
+- [Gerência de Memória e Processos](#gerência-de-memória-e-processos)
+- [Gerência do Kernel](#gerência-do-kernel)
+- [LVM (Logical Volume Manager)](#lvm-logical-volume-manager)
+- [Gerência de Sistema e Diversos](#gerência-de-sistema-e-diversos)
+
+---
+
 # Filosofia do Software Livre e de Código Aberto
 ## Software Livre:
 Definido pela Free Software Foundation (FSF).
@@ -14,6 +32,28 @@ GNOME, KDE Plasma, XFCE, LXDE, Mate
 Explorador de arquivos: Nautilus (GNOME), Dolphin (KDE), Thunar (XFCE)
 ## Acessando o terminal:
 GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
+
+# Estrutura do Sistema de Arquivos Linux
+| Diretório    | Descrição                                                                                          |
+|--------------|----------------------------------------------------------------------------------------------------|
+| `/`          | Diretório raiz, o ponto de partida da hierarquia do sistema de arquivos.                           |
+| `/bin`       | Contém binários essenciais do sistema, acessíveis a todos os usuários.                             |
+| `/boot`      | Arquivos necessários para a inicialização do sistema, incluindo o kernel e inicializadores.        |
+| `/dev`       | Arquivos de dispositivos que representam hardware e periféricos do sistema.                        |
+| `/etc`       | Arquivos de configuração do sistema e scripts de inicialização.                                    |
+| `/home`      | Diretórios pessoais dos usuários. Cada usuário tem um subdiretório dentro de `/home`.              |
+| `/lib`       | Bibliotecas compartilhadas essenciais para os binários em `/bin` e `/sbin`.                        |
+| `/lib64`     | Bibliotecas compartilhadas para sistemas 64-bit.                                                   |
+| `/media`     | Pontos de montagem para dispositivos de mídia removíveis (CDs, DVDs, pen drives).                  |
+| `/mnt`       | Ponto de montagem temporário para sistemas de arquivos montados manualmente.                       |
+| `/opt`       | Pacotes de software opcionais e aplicativos de terceiros.                                          |
+| `/proc`      | Sistema de arquivos virtual que fornece informações sobre o sistema e processos em execução.       |
+| `/root`      | Diretório pessoal do usuário root (superusuário).                                                  |
+| `/sbin`      | Binários essenciais do sistema usados para administração e manutenção do sistema.                  |
+| `/srv`       | Dados específicos de serviço, como páginas web para servidores web.                                |
+| `/tmp`       | Arquivos temporários criados por aplicativos. Esse diretório é limpo regularmente.                 |
+| `/usr`       | Hierarquia secundária de programas e dados, contendo a maioria dos aplicativos e utilitários do usuário. |
+| `/var`       | Arquivos variáveis, como logs do sistema, caches, filas de impressão e bancos de dados temporários.|
 
 # Comandos para Navegação no Sistema de Arquivos
 | **Comando** | **Descrição** | **Exemplo** |
@@ -56,28 +96,6 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 | **nano** | Editor de texto simples no terminal. | `nano arquivo.txt` |
 | **vi** | Editor de texto avançado no terminal. | `vi arquivo.txt` |
 | `vim` | Versão melhorada do vi com mais funcionalidades. | `vim arquivo.txt` |
-
-# Estrutura do Sistema de Arquivos Linux
-| Diretório    | Descrição                                                                                          |
-|--------------|----------------------------------------------------------------------------------------------------|
-| `/`          | Diretório raiz, o ponto de partida da hierarquia do sistema de arquivos.                           |
-| `/bin`       | Contém binários essenciais do sistema, acessíveis a todos os usuários.                             |
-| `/boot`      | Arquivos necessários para a inicialização do sistema, incluindo o kernel e inicializadores.        |
-| `/dev`       | Arquivos de dispositivos que representam hardware e periféricos do sistema.                        |
-| `/etc`       | Arquivos de configuração do sistema e scripts de inicialização.                                    |
-| `/home`      | Diretórios pessoais dos usuários. Cada usuário tem um subdiretório dentro de `/home`.              |
-| `/lib`       | Bibliotecas compartilhadas essenciais para os binários em `/bin` e `/sbin`.                        |
-| `/lib64`     | Bibliotecas compartilhadas para sistemas 64-bit.                                                   |
-| `/media`     | Pontos de montagem para dispositivos de mídia removíveis (CDs, DVDs, pen drives).                  |
-| `/mnt`       | Ponto de montagem temporário para sistemas de arquivos montados manualmente.                       |
-| `/opt`       | Pacotes de software opcionais e aplicativos de terceiros.                                          |
-| `/proc`      | Sistema de arquivos virtual que fornece informações sobre o sistema e processos em execução.       |
-| `/root`      | Diretório pessoal do usuário root (superusuário).                                                  |
-| `/sbin`      | Binários essenciais do sistema usados para administração e manutenção do sistema.                  |
-| `/srv`       | Dados específicos de serviço, como páginas web para servidores web.                                |
-| `/tmp`       | Arquivos temporários criados por aplicativos. Esse diretório é limpo regularmente.                 |
-| `/usr`       | Hierarquia secundária de programas e dados, contendo a maioria dos aplicativos e utilitários do usuário. |
-| `/var`       | Arquivos variáveis, como logs do sistema, caches, filas de impressão e bancos de dados temporários.|
 
 # Editores de Texto no Terminal
 ## Editor Nano
