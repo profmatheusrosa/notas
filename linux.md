@@ -9,7 +9,8 @@
 - [Editores de Texto no Terminal](#editores-de-texto-no-terminal)
 - [Filesystems](#filesystems)
 - [Gerência de Usuários](#gerência-de-usuários)
-- [Gerência de Memória e Processos](#gerência-de-memória-e-processos)
+- [Gerência de Processos](#gerência-de-processos)
+- [Gerência de Memória](#gerência-de-memória)
 - [Gerência do Kernel](#gerência-do-kernel)
 - [LVM (Logical Volume Manager)](#lvm-logical-volume-manager)
 - [Gerência de Sistema e Diversos](#gerência-de-sistema-e-diversos)
@@ -98,7 +99,8 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 | `vim` | Versão melhorada do vi com mais funcionalidades. | `vim arquivo.txt` |
 
 # Permissões de Arquivos
-
+- [ ] UGO
+- [ ] notação octal
 
 # Editores de Texto no Terminal
 ## Editor Nano
@@ -131,8 +133,8 @@ vi arquivo.txt`
 - [ ] userdel
 - [ ] deluser
 
-# Gerência de Memória e Processos
-- [ ] 
+# Gerência de Processos
+- [ ] componentes de um processo
 - [ ] nohup
 - [ ] ps
 - [ ] top
@@ -144,6 +146,8 @@ vi arquivo.txt`
 - [ ] renice
 - [ ] kill
 - [ ] killall
+
+# Gerência de Memória
 - [ ] swapon
 - [ ] swapoff
 
