@@ -101,6 +101,7 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 # Permissões de Arquivos
 - [ ] UGO
 - [ ] notação octal
+- [ ] umask
 
 # Editores de Texto no Terminal
 ## Editor Nano
