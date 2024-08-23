@@ -77,7 +77,7 @@ $$
 Z = \frac{X - \mu}{\sigma}
 $$
 
-### Discretização
+### Discretização ou Binarização
 A discretização é uma técnica que envolve a transformação de variáveis contínuas em variáveis categóricas, dividindo seus valores em intervalos ou "bins". Ela é particularmente útil em situações onde as relações entre as variáveis podem ser melhor capturadas ou interpretadas em termos de categorias em vez de valores contínuos.
   
 ### Codificação de Variáveis Categóricas:
