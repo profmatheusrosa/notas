@@ -8,9 +8,20 @@
 3. [Feature Engineering](#feature-engineering)
 4. [Divisão de dados](#divisão-de-dados)
 5. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
-    - [Modelos de Classificação](#modelos-de-classificação)
-        -[Acurácia](#acurácia)
-    - [Modelos de Regressão](#modelos-de-regressão)
+   1. [Modelos de Classificação](#modelos-de-classificação)
+      1. [Acurácia](#acurácia)
+      2. [Precisão](#precisão)
+      3. [Recall (Sensibilidade)](#recall-sensibilidade)
+      4. [Especificidade](#especificidade)
+      5. [F1-Score](#f1-score)
+      6. [Curva ROC e Área sob a Curva (AUC)](#curva-roc-e-área-sob-a-curva-auc)
+   2. [Modelos de Regressão](#modelos-de-regressão)
+      1. [Erro Quadrático Médio (MSE)](#erro-quadrático-médio-mse)
+      2. [Raiz do Erro Quadrático Médio (RMSE)](#raiz-do-erro-quadrático-médio-rmse)
+      3. [Coeficiente de Determinação (R²)](#coeficiente-de-determinação-r²)
+      4. [Erro Absoluto Médio (MAE)](#erro-absoluto-médio-mae)
+      5. [Erro Percentual Absoluto Médio (MAPE)](#erro-percentual-absoluto-médio-mape)
+      6. [R² Ajustado](#r²-ajustado)
 
 # Tipos de Algoritmos de Machine Learning
 
