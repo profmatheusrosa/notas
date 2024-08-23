@@ -10,15 +10,24 @@
    3. [Aprendizado por Reforço](#aprendizado-por-reforço)
       1. [Aprendizado Baseado em Política](#aprendizado-baseado-em-política)
       2. [Aprendizado Baseado em Valor](#aprendizado-baseado-em-valor)
-2. [Pré-processamento](#pré-processamento)
+2. Exploração e Preparação de Dados
+    1. Exploração de Dados (EDA)
+       1. Análise Exploratória de Dados
+       2. Detecção de Outliers
+       3. Análise de Correlação
+    2. Limpeza de Dados
+       1. Tratamento de Dados Ausentes
+       2. Detecção e Tratamento de Outliers
+       3. Imputação de Dados
+3. [Pré-processamento](#pré-processamento)
    1. [Transformação dos dados](#transformação-dos-dados)
       1. [Normalização/Escalonamento](#normalizaçãoescalonamento)
       2. [Discretização ou Binarização](#discretização-ou-binarização)
       3. [Codificação de Variáveis Categóricas](#codificação-de-variáveis-categóricas)
       4. [Criação de Variáveis Derivadas](#criação-de-variáveis-derivadas)
-3. [Feature Engineering](#feature-engineering)
-4. [Divisão de dados](#divisão-de-dados)
-5. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
+4. [Feature Engineering](#feature-engineering)
+5. [Divisão de dados](#divisão-de-dados)
+6. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
    1. [Modelos de Classificação](#modelos-de-classificação)
       1. [Acurácia](#acurácia)
       2. [Precisão](#precisão)
