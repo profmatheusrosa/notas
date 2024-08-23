@@ -3,8 +3,10 @@
 1. [Tipos de Algoritmos de Machine Learning](#tipos-de-algoritmos-de-machine-learning)
     - [Aprendizado Supervisionado](#aprendizado-supervisionado)
     - [Aprendizado Não Supervisionado](#aprendizado-não-supervisionado)
-    - [Aprendizado por Reforço]
+    - [Aprendizado por Reforço](#aprendizado-por-reforço)
 2. [Pré-processamento](#pré-processamento)
+3. [Feature Engineering](#feature-engineering)
+4. [Divisão de dados](#divisão-de-dados)
 
 # Tipos de Algoritmos de Machine Learning
 
