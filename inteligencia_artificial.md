@@ -26,8 +26,14 @@
       3. [Codificação de Variáveis Categóricas](#codificação-de-variáveis-categóricas)
       4. [Criação de Variáveis Derivadas](#criação-de-variáveis-derivadas)
 4. [Feature Engineering](#feature-engineering)
-5. [Divisão de dados](#divisão-de-dados)
-6. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
+   1. Criação de Variáveis Derivadas
+   2. Seleção de Variáveis
+      1. Seleção Automática de Features (RFE, Lasso)
+      2. Importância de Variáveis
+   3. Codificação de Variáveis Categóricas
+      1. One-Hot Encoding, Label Encoding, Target Encoding
+6. [Divisão de dados](#divisão-de-dados)
+7. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
    1. [Modelos de Classificação](#modelos-de-classificação)
       1. [Acurácia](#acurácia)
       2. [Precisão](#precisão)
