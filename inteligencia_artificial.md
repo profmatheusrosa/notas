@@ -61,7 +61,7 @@
 - Proximal Policy Optimization (PPO)
 
 # Pré-processamento
-O pré-processamento de dados é uma etapa essencial em qualquer projeto de ciência de dados. Ele envolve a preparação dos dados brutos para que possam ser utilizados efetivamente em análises, modelagem e visualização. Aqui estão os principais passos envolvidos no pré-processamento de dados:
+O pré-processamento envolve a preparação dos dados brutos para que possam ser utilizados efetivamente em análises, modelagem e visualização. Aqui estão os principais passos envolvidos no pré-processamento de dados:
 
 ## Transformação dos dados
 ### Normalização/Escalonamento:
@@ -76,11 +76,16 @@ $$
 $$
 Z = \frac{X - \mu}{\sigma}
 $$
+
+### Discretização
+A discretização é uma técnica que envolve a transformação de variáveis contínuas em variáveis categóricas, dividindo seus valores em intervalos ou "bins". Ela é particularmente útil em situações onde as relações entre as variáveis podem ser melhor capturadas ou interpretadas em termos de categorias em vez de valores contínuos.
   
 ### Codificação de Variáveis Categóricas:
-One-Hot Encoding: Transforma variáveis categóricas em vetores binários.
-Label Encoding: Atribui números inteiros a categorias.
-### Criação de Variáveis Derivadas: Geração de novas variáveis a partir das existentes, como extrair ano e mês de uma data.
+- One-Hot Encoding: Transforma variáveis categóricas em vetores binários.
+- Label Encoding: Atribui números inteiros a categorias.
+
+### Criação de Variáveis Derivadas: 
+Geração de novas variáveis a partir das existentes, como extrair ano e mês de uma data.
 
 # Métricas de Avaliação de Modelos
 
