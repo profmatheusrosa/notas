@@ -60,7 +60,27 @@
 - Twin Delayed DDPG (TD3)
 - Proximal Policy Optimization (PPO)
 
+# Pré-processamento
+O pré-processamento de dados é uma etapa essencial em qualquer projeto de ciência de dados. Ele envolve a preparação dos dados brutos para que possam ser utilizados efetivamente em análises, modelagem e visualização. Aqui estão os principais passos envolvidos no pré-processamento de dados:
 
+## Transformação dos dados
+### Normalização/Escalonamento:
+- Min-Max Scaling: Ajusta os valores para um intervalo específico, como [0, 1].
+  
+$$
+X_{scaled} = \frac{X - X_{min}}{X_{max} - X_{min}}
+$$
+  
+- Z-Score Normalization: Converte os valores para terem média 0 e desvio padrão 1.
+  
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+  
+### Codificação de Variáveis Categóricas:
+One-Hot Encoding: Transforma variáveis categóricas em vetores binários.
+Label Encoding: Atribui números inteiros a categorias.
+### Criação de Variáveis Derivadas: Geração de novas variáveis a partir das existentes, como extrair ano e mês de uma data.
 
 # Métricas de Avaliação de Modelos
 
