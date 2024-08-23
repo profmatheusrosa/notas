@@ -9,7 +9,7 @@
 4. [Divisão de dados](#divisão-de-dados)
 5. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
     - [Modelos de Classificação](#modelos-de-classificação)
-          -[Acurácia](#acurácia)
+        -[Acurácia](#acurácia)
     - [Modelos de Regressão](#modelos-de-regressão)
 
 # Tipos de Algoritmos de Machine Learning
