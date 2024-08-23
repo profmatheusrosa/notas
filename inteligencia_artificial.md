@@ -1,3 +1,11 @@
+# Sumário
+
+1. [Tipos de Algoritmos de Machine Learning](#tipos-de-algoritmos-de-machine-learning)
+    - [Aprendizado Supervisionado](#aprendizado-supervisionado)
+    - [Aprendizado Não Supervisionado](#aprendizado-não-supervisionado)
+    - [Aprendizado por Reforço]
+2. [Pré-processamento](#pré-processamento)
+
 # Tipos de Algoritmos de Machine Learning
 
 ## Aprendizado Supervisionado
