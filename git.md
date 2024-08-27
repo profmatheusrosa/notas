@@ -7,6 +7,15 @@
   - [1.2. Contexto](#contexto)
     - [1.2.1. Histórico](#histórico)
     - [1.2.2. Relevância Atual](#relevância-atual)
+
+
+1. [Introdução](#introdução)
+   1.1. [Visão Geral](#visão-geral)
+       1.1.1. [Objetivos](#objetivos)
+       1.1.2. [Escopo](#escopo)
+   1.2. [Contexto](#contexto)
+       1.2.1. [Histórico](#histórico)
+       1.2.2. [Relevância Atual](#relevância-atual)
    
 # Introdução
 
