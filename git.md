@@ -4,7 +4,7 @@
   - [1.1. Visão Geral](#visão-geral)
     - [1.1.1. Objetivos](#objetivos)
     - [1.1.2. Escopo](#escopo)
-  - [1.2. Contexto](#contexto)
+- [2. Contexto](#contexto)
     - [1.2.1. Histórico](#histórico)
     - [1.2.2. Relevância Atual](#relevância-atual)
 
@@ -13,7 +13,7 @@
    1.1. [Visão Geral](#visão-geral)
    1.2. [Contexto](#contexto)
    
-# Introdução [Voltar ao Sumário](#sumário)
+# Introdução
 
 ## Visão Geral
 
@@ -22,8 +22,8 @@ O objetivo desta seção é apresentar uma visão geral do conteúdo abordado no
 
 ### Escopo
 O escopo desta introdução abrange os tópicos que serão discutidos ao longo do documento, delimitando as áreas de interesse e estabelecendo as fronteiras do estudo. Aqui, especificamos os limites do conteúdo e o foco principal da análise.
-
-## Contexto
+[Voltar ao Sumário](#sumário)
+# Contexto
 
 ### Histórico
 Nesta subseção, discutimos o histórico do tema abordado, explorando suas origens e a evolução ao longo do tempo. Fornecemos uma perspectiva histórica para contextualizar a importância do assunto e como ele se desenvolveu até o presente.
