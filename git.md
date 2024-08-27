@@ -1,18 +1,13 @@
 
 # Sumário
-- [1. Introdução](#introdução)
-  - [1.1. Visão Geral](#visão-geral)
-    - [1.1.1. Objetivos](#objetivos)
-    - [1.1.2. Escopo](#escopo)
-- [2. Contexto](#contexto)
-    - [1.2.1. Histórico](#histórico)
-    - [1.2.2. Relevância Atual](#relevância-atual)
-
-
 1. [Introdução](#introdução)
-   1.1. [Visão Geral](#visão-geral)
-   1.2. [Contexto](#contexto)
-   
+    - [Visão Geral](#visão-geral)
+    - [Objetivos](#objetivos)
+    - [Escopo](#escopo)
+2. [Contexto](#contexto)
+    - [Histórico](#histórico)
+    - [Relevância Atual](#relevância-atual)
+
 # Introdução
 
 ## Visão Geral
