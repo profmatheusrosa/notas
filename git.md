@@ -22,6 +22,7 @@ O objetivo desta seção é apresentar uma visão geral do conteúdo abordado no
 
 ### Escopo
 O escopo desta introdução abrange os tópicos que serão discutidos ao longo do documento, delimitando as áreas de interesse e estabelecendo as fronteiras do estudo. Aqui, especificamos os limites do conteúdo e o foco principal da análise.
+
 [Voltar ao Sumário](#sumário)
 # Contexto
 
