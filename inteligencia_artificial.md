@@ -111,6 +111,7 @@
 - Twin Delayed DDPG (TD3)
 - Proximal Policy Optimization (PPO)
 
+[Voltar ao Sumário](#sumário)
 # Pré-processamento
 O pré-processamento envolve a preparação dos dados brutos para que possam ser utilizados efetivamente em análises, modelagem e visualização. Aqui estão os principais passos envolvidos no pré-processamento de dados:
 
@@ -138,6 +139,7 @@ A discretização é uma técnica que envolve a transformação de variáveis co
 ### Criação de Variáveis Derivadas: 
 Geração de novas variáveis a partir das existentes, como extrair ano e mês de uma data.
 
+[Voltar ao Sumário](#sumário)
 # Métricas de Avaliação de Modelos
 
 ## Modelos de Classificação
