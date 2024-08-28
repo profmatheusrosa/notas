@@ -1,6 +1,7 @@
 # Sumário
 
 - [Filosofia do Software Livre e de Código Aberto](#filosofia-do-software-livre-e-de-código-aberto)
+- [Arquitetura](#arquitetura)
 - [Interface Gráfica (GUI) e Linha de Comando (CLI)](#interface-gráfica-gui-e-linha-de-comando-cli)
 - [Estrutura do Sistema de Arquivos Linux](#estrutura-do-sistema-de-arquivos-linux)
 - [Comandos para Navegação no Sistema de Arquivos](#comandos-para-navegação-no-sistema-de-arquivos)
@@ -8,6 +9,7 @@
 - [Gerência de Arquivos e Diretórios](#gerência-de-arquivos-e-diretórios)
 - [Editores de Texto no Terminal](#editores-de-texto-no-terminal)
 - [Filesystems](#filesystems)
+- Inode
 - [Gerência de Usuários](#gerência-de-usuários)
 - [Gerência de Processos](#gerência-de-processos)
 - [Gerência de Memória](#gerência-de-memória)
