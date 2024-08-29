@@ -9,13 +9,14 @@
 - [Gerência de Arquivos e Diretórios](#gerência-de-arquivos-e-diretórios)
 - [Editores de Texto no Terminal](#editores-de-texto-no-terminal)
 - [Filesystems](#filesystems)
-- Inode
+- [Inode]
 - [Gerência de Usuários](#gerência-de-usuários)
 - [Gerência de Processos](#gerência-de-processos)
 - [Gerência de Memória](#gerência-de-memória)
 - [Gerência do Kernel](#gerência-do-kernel)
 - [LVM (Logical Volume Manager)](#lvm-logical-volume-manager)
 - [Gerência de Sistema e Diversos](#gerência-de-sistema-e-diversos)
+- [Principais Arquivos de Configuração do Sistema]
 
 ---
 
@@ -36,6 +37,7 @@ Explorador de arquivos: Nautilus (GNOME), Dolphin (KDE), Thunar (XFCE)
 ## Acessando o terminal:
 GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 
+[Voltar ao Sumário](#sumário)
 # Estrutura do Sistema de Arquivos Linux
 | Diretório    | Descrição                                                                                          |
 |--------------|----------------------------------------------------------------------------------------------------|
@@ -58,6 +60,7 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 | `/usr`       | Hierarquia secundária de programas e dados, contendo a maioria dos aplicativos e utilitários do usuário. |
 | `/var`       | Arquivos variáveis, como logs do sistema, caches, filas de impressão e bancos de dados temporários.|
 
+[Voltar ao Sumário](#sumário)
 # Comandos para Navegação no Sistema de Arquivos
 | **Comando** | **Descrição** | **Exemplo** |
 |-------------|---------------|-------------|
@@ -100,42 +103,81 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 | **vi** | Editor de texto avançado no terminal. | `vi arquivo.txt` |
 | `vim` | Versão melhorada do vi com mais funcionalidades. | `vim arquivo.txt` |
 
+[Voltar ao Sumário](#sumário)
 # Permissões de Arquivos
 - [ ] UGO
 - [ ] notação octal
 - [ ] umask
 
+[Voltar ao Sumário](#sumário)
 # Editores de Texto no Terminal
 ## Editor Nano
-### Comando para abrir arquivos:
-```bash
-nano arquivo.txt
-```
-### Comandos básicos:
-* Salvar: Ctrl + O
-* Sair: Ctrl + X
-* Cortar linha: Ctrl + K
-* Colar linha: Ctrl + U
+
+| **Ação**                    | **Comando**                |
+|-----------------------------|----------------------------|
+| Abrir arquivo               | `nano arquivo.txt`         |
+| Salvar                      | `Ctrl + O`, depois `Enter` |
+| Sair                        | `Ctrl + X`                 |
+| Cortar linha                | `Ctrl + K`                 |
+| Colar linha                 | `Ctrl + U`                 |
+| Procurar texto              | `Ctrl + W`, digite o texto e pressione `Enter` |
+| Ir para linha               | `Ctrl + _`, digite o número da linha e pressione `Enter` |
 
 ## Editor Vi/Vim
-### Comando para abrir arquivos:
-```bash
-vi arquivo.txt`
-```
-### Comandos básicos:
-* Entrar no modo de inserção: i
-* Salvar e sair: :wq
-* Sair sem salvar: :q!
-* Navegar no texto: h, j, k, l (esquerda, baixo, cima, direita)
+| **Ação**                    | **Comando**                |
+|-----------------------------|----------------------------|
+| Abrir arquivo               | `vi arquivo.txt` <br> `vim arquivo.txt` |
+| Entrar no modo de inserção  | `i` (inserir) <br> `a` (adicionar) |
+| Salvar e sair               | `:wq` e pressione `Enter`   |
+| Sair sem salvar             | `:q!` e pressione `Enter`   |
+| Navegar no texto            | `h` (esquerda) <br> `j` (baixo) <br> `k` (cima) <br> `l` (direita) |
+| Excluir linha               | `dd`                       |
+| Copiar linha                | `yy`                       |
+| Colar linha                 | `p`                        |
+| Buscar texto                | `/texto` e pressione `Enter` |
+| Substituir texto            | `:%s/antigo/novo/g` e pressione `Enter` |
+| Visualizar alterações       | `u` (desfazer) <br> `Ctrl + r` (refazer) |
 
+## Editor Emacs (Opcional)
+| **Ação**                    | **Comando**                |
+|-----------------------------|----------------------------|
+| Abrir arquivo               | `emacs arquivo.txt`        |
+| Salvar                      | `Ctrl + x`, depois `Ctrl + s` |
+| Sair                        | `Ctrl + x`, depois `Ctrl + c` |
+| Cortar texto                | `Ctrl + k`                 |
+| Colar texto                 | `Ctrl + y`                 |
+| Buscar texto                | `Ctrl + s`, digite o texto e pressione `Enter` |
+
+[Voltar ao Sumário](#sumário)
 # Filesystems
 
+[Voltar ao Sumário](#sumário)
 # Gerência de Usuários
-- [ ] adduser
-- [ ] useradd
-- [ ] userdel
-- [ ] deluser
+| **Comando** | **Descrição** | **Exemplo** |
+|-------------|---------------|-------------|
+| `useradd` | Cria um novo usuário no sistema. | `useradd matheus` |
+| `useradd -m` | Cria o diretório home do usuário. | `useradd -m matheus` |
+| `useradd -s /bin/bash` | Define o shell padrão do usuário. | `useradd -s /bin/bash matheus` |
+| `usermod` | Modifica as propriedades de um usuário existente. | `usermod -aG sudo matheus` |
+| `usermod -aG` | Adiciona o usuário a um grupo adicional. | `usermod -aG sudo matheus` |
+| `usermod -l` | Altera o nome do usuário. | `usermod -l novo_nome matheus` |
+| `usermod -d` | Muda o diretório home do usuário. | `usermod -d /novo/home matheus` |
+| `userdel` | Remove um usuário do sistema. | `userdel matheus` |
+| `userdel -r` | Remove também o diretório home do usuário. | `userdel -r matheus` |
+| `passwd` | Define ou altera a senha de um usuário. | `passwd matheus` |
+| `groupadd` | Cria um novo grupo. | `groupadd desenvolvedores` |
+| `groupmod` | Modifica as propriedades de um grupo existente. | `groupmod -n devs desenvolvedores` |
+| `groupdel` | Remove um grupo do sistema. | `groupdel desenvolvedores` |
+| `id` | Exibe informações sobre o usuário atual ou especificado. | `id matheus` |
+| `su` | Permite trocar para outro usuário ou executar comandos como outro usuário. | `su - matheus` |
+| `su -` | Muda para o superusuário root. | `su -` |
+| `sudo` | Executa um comando como outro usuário, geralmente root. | `sudo useradd matheus` |
+| `who` | Exibe uma lista de usuários atualmente logados no sistema. | `who` |
+| `chage` | Gerencia as políticas de expiração de senha de um usuário. | `chage -l matheus` |
+| `chage -M` | Define o número máximo de dias antes que a senha expire. | `chage -M 90 matheus` |
+| `chage -E` | Define a data de expiração da conta. | `chage -E 2024-12-31 matheus` |
 
+[Voltar ao Sumário](#sumário)
 # Gerência de Processos
 - [ ] componentes de um processo
 - [ ] nohup
@@ -150,10 +192,85 @@ vi arquivo.txt`
 - [ ] kill
 - [ ] killall
 
+[Voltar ao Sumário](#sumário)
 # Gerência de Memória
-- [ ] swapon
-- [ ] swapoff
+| **Comando**      | **Descrição**                                                   | **Exemplo**                           |
+|------------------|-------------------------------------------------------------------|---------------------------------------|
+| **free**         | Exibe informações sobre o uso de memória no sistema.             | `free`                                |
+| `free -h`        | Exibe informações de memória em um formato legível por humanos.   | `free -h`                             |
+| **top**          | Exibe uma visão geral dinâmica dos processos em execução e do uso de memória. | `top`                                 |
+| **htop**         | Versão melhorada do `top`, com uma interface mais amigável e opções interativas. | `htop`                                |
+| **vmstat**       | Fornece informações sobre processos, memória, paginação, blocos de entrada/saída, interrupções e atividade de CPU. | `vmstat`                               |
+| `vmstat 5`       | Exibe informações de memória a cada 5 segundos.                   | `vmstat 5`                            |
+| **ps**           | Mostra informações sobre processos em execução.                  | `ps aux`                              |
+| `ps aux --sort=-%mem` | Exibe processos ordenados pelo uso de memória.                | `ps aux --sort=-%mem`                 |
+| **pmap**         | Exibe o mapeamento de memória de um processo específico.           | `pmap <PID>`                          |
+| **smem**         | Relata o uso de memória de processos com informações de memória compartilhada e não compartilhada. | `smem`                                |
+| **free -t**      | Exibe o total de memória utilizada e disponível.                  | `free -t`                             |
+| **sysctl**       | Permite modificar parâmetros do kernel em tempo real.             | `sysctl -a | grep mem`                |
+| `sysctl vm.swappiness` | Exibe o valor atual da variável de swappiness.                | `sysctl vm.swappiness`               |
+| **swapon**       | Mostra o status das áreas de swap ativas.                         | `swapon --show`                       |
+| **swapoff**      | Desativa uma área de swap.                                        | `swapoff /swapfile`                  |
+| **swapon**       | Ativa uma área de swap.                                           | `swapon /swapfile`                   |
+| **dd**           | Pode ser usado para criar um arquivo de swap.                     | `dd if=/dev/zero of=/swapfile bs=1M count=1024` |
+| `mkswap`         | Cria uma área de swap em um arquivo ou partição.                   | `mkswap /swapfile`                   |
+| `swapon`         | Ativa o arquivo de swap.                                          | `swapon /swapfile`                   |
 
+
+[Voltar ao Sumário](#sumário)
 # Gerência do Kernel
+
+[Voltar ao Sumário](#sumário)
 # LVM (Logical Volume Manager)
+LVM (Logical Volume Management) é uma tecnologia de gerenciamento de armazenamento no Linux que permite maior flexibilidade na gestão de discos rígidos e partições. Com LVM, é possível redimensionar, mover e gerenciar volumes lógicos de forma dinâmica sem interromper o funcionamento do sistema.
+
+### 2. Conceitos Básicos
+- **Physical Volume (PV):** Corresponde ao disco físico ou partição em que o LVM será implementado. Cada PV pode ser um disco inteiro ou uma partição específica.
+- **Volume Group (VG):** Um grupo de volumes físicos que são combinados para formar um pool de armazenamento. Um VG pode conter vários PVs.
+- **Logical Volume (LV):** Um volume lógico que é criado dentro de um VG e pode ser usado para criar sistemas de arquivos. É similar a uma partição, mas oferece muito mais flexibilidade, como redimensionamento dinâmico.
+- **Logical Extents (LE) e Physical Extents (PE):** Pequenas unidades de armazenamento, normalmente de 4 MB, em que os LVs e PVs são divididos. Cada LE mapeia diretamente para um PE.
+
+### 3. Por que Usar LVM?
+- **Flexibilidade:** LVM permite redimensionar volumes lógicos sem precisar parar o sistema ou desmontar partições.
+- **Facilidade de Gerenciamento:** Adicionar ou remover discos de um volume group é simples e não requer reparticionamento.
+- **Snapshots:** LVM permite criar snapshots (cópias congeladas) de volumes lógicos para backups ou testes.
+- **Desempenho:** LVM pode melhorar o desempenho ao distribuir dados entre múltiplos discos.
+
+[Voltar ao Sumário](#sumário)
 # Gerência de Sistema e Diversos
+
+[Voltar ao Sumário](#sumário)
+# Principais Arquivos de Configuração do Sistema
+### Arquivos de Configuração do Sistema
+| **Caminho**                                | **Arquivo**                | **Descrição**                                                        |
+|--------------------------------------------|----------------------------|------------------------------------------------------------------------|
+| `/etc/passwd`                              | Arquivo de Senhas          | Contém informações básicas sobre usuários, como nome e ID.            |
+| `/etc/shadow`                              | Arquivo de Senhas Criptografadas | Armazena senhas criptografadas dos usuários e dados relacionados à expiração de senhas. |
+| `/etc/group`                               | Arquivo de Grupos          | Define os grupos de usuários no sistema.                              |
+| `/etc/gshadow`                             | Arquivo de Senhas dos Grupos | Armazena informações de senhas para grupos e dados de controle de acesso. |
+| `/etc/network/interfaces`                  | Arquivo de Configuração de Rede (Debian) | Configura as interfaces de rede (para distribuições baseadas em Debian). |
+| `/etc/sysconfig/network-scripts/ifcfg-*`   | Arquivo de Configuração de Rede (Red Hat) | Configura interfaces de rede (para distribuições baseadas em Red Hat). |
+| `/etc/hostname`                            | Arquivo de Configuração do Hostname | Define o nome do host do sistema.                                     |
+| `/etc/hosts`                               | Arquivo de Configuração do Hosts    | Mapeia nomes de host para endereços IP.                               |
+| `/etc/samba/smb.conf`                      | Arquivo de Configuração do Samba     | Configura o servidor e cliente Samba.                                 |
+| `/etc/ssh/sshd_config`                     | Arquivo de Configuração do SSH       | Configura o daemon SSH, incluindo permissões e opções de autenticação. |
+| `/etc/crontab`                             | Arquivo de Configuração do Cron       | Define tarefas agendadas para o sistema.                              |
+| `/etc/systemd/system/`                    | Arquivo de Configuração do Systemd   | Contém unidades e configurações do `systemd`.                         |
+
+### Arquivos de Configuração do Sistema de Arquivos
+
+| **Caminho**                                | **Arquivo**                                | **Descrição**                                                        |
+|--------------------------------------------|--------------------------------------------|------------------------------------------------------------------------|
+| `/etc/fstab`                              | Arquivo de Tabelas de Partição             | Define as partições de disco a serem montadas automaticamente.         |
+| `/etc/default/grub`                       | Arquivo de Configuração do GRUB            | Contém opções de configuração do carregador de inicialização GRUB.     |
+
+### Arquivos de Log
+
+| **Caminho**                                | **Arquivo**                                | **Descrição**                                                        |
+|--------------------------------------------|--------------------------------------------|------------------------------------------------------------------------|
+| `/var/log/syslog`                          | Log de Sistema                             | Contém mensagens do sistema e do kernel.                              |
+| `/var/log/kern.log`                        | Log do Kernel                              | Registra mensagens do kernel.                                         |
+| `/var/log/auth.log`                        | Log de Autenticação                        | Registra eventos relacionados à autenticação.                         |
+| `/var/log/messages`                       | Log de Mensagens Gerais                    | Contém mensagens gerais de vários serviços do sistema.                |
+
+[Voltar ao Sumário](#sumário)
