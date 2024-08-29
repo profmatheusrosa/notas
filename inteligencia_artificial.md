@@ -33,7 +33,15 @@
    3. Codificação de Variáveis Categóricas
       1. One-Hot Encoding, Label Encoding, Target Encoding
 6. [Divisão de dados](#divisão-de-dados)
-7. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
+7. [Modelagem](#modelagem)
+   - Overfiting
+   - Underfiting
+   - Otimização de hiperparametros
+   - Técnicas de Regularização
+        - L1 (LASSO)
+        - L2 (Ridge)
+        - Dropout
+9. [Métricas de Avaliação de Modelos](#métricas-de-avaliação-de-modelos)
    1. [Modelos de Classificação](#modelos-de-classificação)
       1. [Acurácia](#acurácia)
       2. [Precisão](#precisão)
@@ -48,6 +56,7 @@
       4. [Erro Absoluto Médio (MAE)](#erro-absoluto-médio-mae)
       5. [Erro Percentual Absoluto Médio (MAPE)](#erro-percentual-absoluto-médio-mape)
       6. [R² Ajustado](#r²-ajustado)
+10. []
 
 # Tipos de Algoritmos de Machine Learning
 
