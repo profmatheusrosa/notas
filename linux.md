@@ -150,6 +150,70 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 
 [Voltar ao Sumário](#sumário)
 # Filesystems
+## Tipos Comuns de Sistemas de Arquivos
+
+### 1. **Ext4 (Fourth Extended File System)**
+- **Descrição:** É o sistema de arquivos padrão para a maioria das distribuições Linux. Oferece melhorias significativas em relação ao ext3, como suporte a volumes maiores e maior eficiência na alocação de espaço.
+- **Características:**
+  - Tamanho máximo de arquivo: 16 TB
+  - Tamanho máximo de sistema de arquivos: 1 EB (Exabyte)
+  - Suporte a journaling para recuperação após falhas
+  - Melhoria na performance e no gerenciamento de espaço
+- **Comandos:**
+  - `mkfs.ext4 /dev/sdXn` – Formata a partição com ext4
+  - `e2fsck -f /dev/sdXn` – Verifica e corrige o sistema de arquivos
+
+### 2. **XFS**
+- **Descrição:** Um sistema de arquivos de alta performance desenvolvido pela SGI (Silicon Graphics) que é bem adequado para grandes volumes e sistemas de arquivos de grande porte.
+- **Características:**
+  - Tamanho máximo de arquivo: 8 EB
+  - Tamanho máximo de sistema de arquivos: 8 EB
+  - Suporte a journaling
+  - Bom desempenho em operações com grandes arquivos
+- **Comandos:**
+  - `mkfs.xfs /dev/sdXn` – Formata a partição com xfs
+  - `xfs_repair /dev/sdXn` – Verifica e corrige o sistema de arquivos
+
+### 3. **Btrfs (B-tree File System)**
+- **Descrição:** Um sistema de arquivos avançado que oferece suporte a recursos como snapshots, controle de versão e verificação de integridade dos dados.
+- **Características:**
+  - Tamanho máximo de arquivo: 16 EB
+  - Tamanho máximo de sistema de arquivos: 16 EB
+  - Suporte a snapshots e subvolumes
+  - Controle de integridade e correção automática de erros
+- **Comandos:**
+  - `mkfs.btrfs /dev/sdXn` – Formata a partição com btrfs
+  - `btrfs check /dev/sdXn` – Verifica e corrige o sistema de arquivos
+
+### 4. **FAT32 e NTFS**
+- **Descrição:** Sistemas de arquivos usados principalmente em ambientes Windows, mas também suportados no Linux para interoperabilidade.
+- **Características:**
+  - **FAT32:** Suporte a tamanhos menores de arquivo e sistema de arquivos comparado ao NTFS.
+  - **NTFS:** Suporte a permissões de arquivos, criptografia e outros recursos avançados.
+- **Comandos:**
+  - `mkfs.vfat /dev/sdXn` – Formata a partição com FAT32
+  - `ntfs-3g /dev/sdXn /mnt/ntfs` – Monta uma partição NTFS
+ 
+## Comandos de Montagem e Desmontagem
+
+| Ação          | Comando                                 | Descrição                                      |
+|---------------|-----------------------------------------|------------------------------------------------|
+| Montar        | `mount /dev/sdXn /ponto/de/montagem`    | Torna o sistema de arquivos acessível          |
+| Desmontar      | `umount /ponto/de/montagem`             | Remove o acesso ao sistema de arquivos         |
+
+## Verificação e Reparação de Sistemas de Arquivos
+
+| Ação          | Comando                  | Descrição                                             |
+|---------------|--------------------------|-------------------------------------------------------|
+| Verificar     | `fsck /dev/sdXn`         | Verifica e corrige erros em sistemas de arquivos    |
+| Ajustar       | `tune2fs -l /dev/sdXn`   | Exibe informações sobre sistemas de arquivos ext2/ext3/ext4 |
+
+## Gerenciamento de Espaço em Disco
+
+| Ação          | Comando                    | Descrição                                      |
+|---------------|----------------------------|------------------------------------------------|
+| Espaço Livre   | `df -h`                    | Exibe o uso de espaço em disco em formato legível por humanos |
+| Uso de Disco   | `du -sh /caminho/para/diretorio` | Estima o uso de espaço por arquivos e diretórios |
 
 [Voltar ao Sumário](#sumário)
 # Gerência de Usuários
