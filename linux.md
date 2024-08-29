@@ -21,20 +21,20 @@
 ---
 
 # Filosofia do Software Livre e de Código Aberto
-## Software Livre:
+### Software Livre:
 Definido pela Free Software Foundation (FSF).
 Quatro liberdades essenciais: usar, estudar, modificar e distribuir.
 
-## Código Aberto:
+### Código Aberto:
 Definido pela Open Source Initiative (OSI).
 Ênfase na qualidade do software, colaboração e desenvolvimento aberto.
 
 # Interface Gráfica (GUI) e  Linha de Comando (CLI)
-## Principais Ambientes de Desktop:
+### Principais Ambientes de Desktop:
 GNOME, KDE Plasma, XFCE, LXDE, Mate
-## Navegação na Interface Gráfica:
+### Navegação na Interface Gráfica:
 Explorador de arquivos: Nautilus (GNOME), Dolphin (KDE), Thunar (XFCE)
-## Acessando o terminal:
+### Acessando o terminal:
 GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 
 [Voltar ao Sumário](#sumário)
