@@ -5,7 +5,8 @@
 - [Métodos Especiais](#métodos-especiais)
 - [Herança](#herança)
 - [Polimorfismo](#polimorfismo)
-- [Encapsulamento e abstração](#encapsulamento-e-abstração)
+- [Encapsulamento](#encapsulamento)
+- [Abstração](#abstração)
 
 # Programação Orientada a Objetos (POO)
 A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o software em "objetos", que são instâncias de "classes". Uma classe pode ser vista como um molde ou template que define os atributos (dados) e métodos (funções) que os objetos criados a partir dela terão.
@@ -25,6 +26,7 @@ Exemplo: Um método fazer_som pode ser implementado de formas diferentes em clas
 
 A POO é um paradigma poderoso e amplamente utilizado que facilita a criação de software modular, reutilizável e fácil de manter. Comparado a outros paradigmas, como a programação procedural e funcional, a POO oferece uma maneira intuitiva de modelar e interagir com entidades complexas, refletindo melhor a maneira como pensamos sobre o mundo real. No entanto, a escolha do paradigma deve ser baseada nas necessidades específicas do projeto e nas preferências da equipe de desenvolvimento.
 
+[Voltar ao Sumário](#sumário)
 # Classes e objetos
 ## Classe
 Uma classe é um modelo ou um molde que define a estrutura e o comportamento (atributos e métodos) que os objetos criados a partir dessa classe terão. Ela encapsula dados e funcionalidades que operam sobre esses dados, permitindo a criação de novos tipos de dados definidos pelo usuário.
@@ -244,6 +246,7 @@ print(repr(pessoa1))  # Saída: Pessoa('Alice', 30)
 * `__next__`: Define a iteração sobre o objeto.
 * `__call__`: Permite que uma instância de uma classe seja chamada como uma função.
 
+[Voltar ao Sumário](#sumário)
 # Herança
 É o mecanismo pelo qual uma classe (chamada de classe derivada ou subclasse) pode herdar atributos e métodos de outra classe (chamada de classe base ou superclasse). Isso permite a criação de uma hierarquia de classes que representam relações "é-um" entre objetose e a reutilização de código.
 
@@ -372,6 +375,7 @@ A ordem MRO pode ser visualizada com o método mro() da classe, mostrando a sequ
 * Preferir Composição a Herança: Use composição para combinar comportamentos em vez de criar hierarquias complexas.
 * Interface Clara: Defina métodos abstratos claros na classe base para garantir que subclasses implementem a funcionalidade necessária.
 
+[Voltar ao Sumário](#sumário)
 # Polimorfismo
 É a capacidade de diferentes classes de serem tratadas como instâncias de uma mesma classe base. Ele permite que métodos com o mesmo nome em diferentes classes tenham comportamentos distintos.
 
@@ -411,6 +415,7 @@ for animal in animais:
     emitir_som(animal)
 ```
 
+[Voltar ao Sumário](#sumário)
 # Encapsulamento
 Foca em esconder os detalhes internos de implementação e proteger os dados, utiliza a prática de restringir o acesso direto aos dados de um objeto e permitir que esses dados sejam manipulados apenas por métodos definidos. Em Python, isso é conseguido usando convenções de nomenclatura e mecanismos de controle de acesso, como atributos e métodos privados.
 
@@ -524,7 +529,7 @@ print(conta.saldo)  # Saída: 1000
 conta.saldo = 1200
 print(conta.saldo)  # Saída: 1200
 ```
-
+[Voltar ao Sumário](#sumário)
 # Abstração 
 É o processo de simplificação de sistemas complexos através da ocultação de detalhes desnecessários e exposição apenas das partes essenciais. Em POO, abstração permite que os desenvolvedores definam classes e objetos que representam conceitos gerais, enquanto ocultam os detalhes de implementação.
 
