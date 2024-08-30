@@ -16,9 +16,11 @@
 - [Gerência do Kernel](#gerência-do-kernel)
 - [LVM (Logical Volume Manager)](#lvm-logical-volume-manager)
 - [Gerência de Sistema e Diversos](#gerência-de-sistema-e-diversos)
-- [Principais Arquivos de Configuração do Sistema]
+- [Principais Arquivos de Configuração do Sistema](#principais-arquivos-de-configuração-do-sistema)
 
 ---
+# Modificações futuras
+- [ ] setuid 
 
 # Filosofia do Software Livre e de Código Aberto
 ### Software Livre:
@@ -107,7 +109,41 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 # Permissões de Arquivos
 - [ ] UGO
 - [ ] notação octal
+- [ ] notação simbolica
 - [ ] umask
+As permissões de arquivos em sistemas Unix/Linux são representadas por três grupos de três bits cada:
+
+1. **Dono do arquivo**: Leitura (r), escrita (w), e execução (x).
+2. **Grupo**: Leitura (r), escrita (w), e execução (x).
+3. **Outros usuários**: Leitura (r), escrita (w), e execução (x).
+
+-### Permissões Octais
+
+Essas permissões são representadas em octal (base 8) da seguinte maneira:
+- **4**: Leitura (r)
+- **2**: Escrita (w)
+- **1**: Execução (x)
+
+Esses valores são somados para formar as permissões para cada grupo. Por exemplo, `r-x` seria 4 + 1 = 5.
+
+### Bits Especiais
+
+Além das permissões básicas, existem três bits especiais:
+
+1. **setuid (Set User ID)**: Quando definido, faz com que o arquivo seja executado com as permissões do dono do arquivo, não com as permissões do usuário que o está executando. Em octal, o bit `setuid` é representado por **4**.
+
+2. **setgid (Set Group ID)**: Quando definido em um arquivo, faz com que o arquivo seja executado com as permissões do grupo do arquivo. Em um diretório, faz com que novos arquivos criados no diretório herdem o grupo do diretório. O bit `setgid` é representado por **2** em octal.
+
+3. **sticky bit**: Usado em diretórios para garantir que somente o dono do arquivo pode deletar ou renomear seus próprios arquivos dentro do diretório. Em octal, o sticky bit é representado por **1**.
+
+Para aplicar esses bits especiais, adicionamos um valor adicional ao início da permissão octal normal. O `4` no início indica que o bit `setuid` está ativado.
+
+Então, no caso das permissões `-rwsr-xr-x`:
+
+- O `rws` indica que o dono do arquivo tem permissão de leitura, escrita e execução, com o bit `setuid` ativado.
+- Isso se traduz em **4** (para `setuid`) + **7** (para `rwx`) = **4755** em octal.
+
+Portanto, a permissão octal `4755` representa o arquivo com o bit `setuid` ativado e as permissões `rwxr-xr-x`.
 
 [Voltar ao Sumário](#sumário)
 # Editores de Texto no Terminal
