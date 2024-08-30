@@ -1,5 +1,5 @@
 - [Programação Orientada a Objetos (POO)](#programação-orientada-a-objetos-poo)
-   - [Princípios da POO](#principios-da-poo)
+   - [Princípios da POO](#princípios-da-poo)
    - [Vantagens da POO](#vantagens-da-poo)
 - [Classes e objetos](#classes-e-objetos)
 - [Atributos e métodos](#atributos-e-métodos)
