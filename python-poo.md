@@ -1,5 +1,5 @@
 - [Programação Orientada a Objetos (POO)](#programação-orientada-a-objetos-poo)
-   - [Princípios Fundamentais da POO](#principios-fundamentais-da-poo)
+   - [Princípios da POO](#principios-da-poo)
    - [Vantagens da POO](#vantagens-da-poo)
 - [Classes e objetos](#classes-e-objetos)
 - [Atributos e métodos](#atributos-e-métodos)
@@ -12,7 +12,7 @@
 # Programação Orientada a Objetos (POO)
 A Programação Orientada a Objetos (POO) é um paradigma de programação que organiza o software em "objetos", que são instâncias de "classes". Uma classe pode ser vista como um molde ou template que define os atributos (dados) e métodos (funções) que os objetos criados a partir dela terão.
 
-## Princípios Fundamentais da POO
+## Princípios da POO
 * Abstração: É o processo de simplificar a complexidade do software, focando nos aspectos essenciais de uma entidade, ocultando detalhes desnecessários.
 Exemplo: Ao modelar um carro, a abstração poderia focar nos atributos "marca", "modelo" e "ano", sem se preocupar com detalhes como o tipo de material usado nos bancos.
 
@@ -391,6 +391,34 @@ print(Anfibio.mro())
 # Output: [<class '__main__.Anfibio'>, <class '__main__.Terrestre'>, <class '__main__.Aquatico'>, <class 'object'>]
 ```
 A ordem MRO pode ser visualizada com o método mro() da classe, mostrando a sequência de classes que Python segue ao procurar métodos.
+
+### Composição vs. Herança
+Composição é um conceito em Programação Orientada a Objetos onde uma classe é composta por instâncias de outras classes, em vez de estender (herdar) outra classe. Isso significa que, em vez de uma classe filha herdar comportamento de uma classe pai, ela possui objetos de outras classes como atributos.
+
+### Exemplo de Composição
+
+```python
+class Motor:
+    def __init__(self, potencia):
+        self.potencia = potencia
+
+    def ligar(self):
+        print("Motor ligado.")
+
+class Carro:
+    def __init__(self, modelo, potencia_motor):
+        self.modelo = modelo
+        self.motor = Motor(potencia_motor)  # Composição
+
+    def ligar(self):
+        print(f"{self.modelo} está pronto.")
+        self.motor.ligar()
+
+carro = Carro("Sedan", 150)
+carro.ligar()
+```
+- Use Composição quando o relacionamento entre as classes for do tipo "tem um" em vez de "é um". Por exemplo, um Carro "tem um" Motor, mas não é necessariamente um tipo de Motor.
+- Use Herança quando o relacionamento entre as classes for do tipo "é um". Por exemplo, um Carro "é um" Veículo.
 
 ### Boas Práticas:
 * Evitar Herança Múltipla: Pode complicar a hierarquia de classes e introduzir problemas difíceis de depurar.
