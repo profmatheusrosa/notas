@@ -107,26 +107,96 @@ GNOME Terminal, Konsole (KDE), xterm, Terminator (emulador).
 
 [Voltar ao Sumário](#sumário)
 # Permissões de Arquivos
-- [ ] UGO
-- [ ] notação octal
-- [ ] notação simbolica
-- [ ] umask
-As permissões de arquivos em sistemas Unix/Linux são representadas por três grupos de três bits cada:
+As permissões de arquivos e diretórios em Linux são essenciais para garantir a segurança e o controle de acesso no sistema. Elas determinam quem pode ler, escrever ou executar um arquivo ou diretório, prevenindo acessos não autorizados e mantendo a integridade dos dados. Neste guia, você aprenderá como as permissões funcionam, como configurá-las e as boas práticas para aplicá-las em diferentes cenários.
 
-1. **Dono do arquivo**: Leitura (r), escrita (w), e execução (x).
-2. **Grupo**: Leitura (r), escrita (w), e execução (x).
-3. **Outros usuários**: Leitura (r), escrita (w), e execução (x).
 
--### Permissões Octais
+## Sistema de Permissões UGO
+As permissões são definidas para três categorias de usuários:
 
-Essas permissões são representadas em octal (base 8) da seguinte maneira:
-- **4**: Leitura (r)
-- **2**: Escrita (w)
-- **1**: Execução (x)
+- **U (User)**: O proprietário do arquivo ou diretório.
+- **G (Group)**: O grupo de usuários ao qual o proprietário pertence.
+- **O (Others)**: Todos os outros usuários.
 
-Esses valores são somados para formar as permissões para cada grupo. Por exemplo, `r-x` seria 4 + 1 = 5.
+Cada um desses grupos pode ter uma combinação de permissões:
 
-### Bits Especiais
+- **r (Read)**: Permissão para ler o arquivo ou listar o conteúdo do diretório.
+- **w (Write)**: Permissão para modificar o arquivo ou adicionar/remover arquivos do diretório.
+- **x (Execute)**: Permissão para executar o arquivo (se for um programa) ou acessar o diretório (navegar para dentro dele).
+
+### Exemplo: `-rwxr-xr-x` 
+
+O primeiro caractere na string de permissões indica o tipo de arquivo ou dispositivo. Aqui estão os tipos mais comuns:
+- **`-` (hífen)**: Indica um **arquivo comum**.
+- **`b`**: Dispositivo de **bloco** (oferecem grandes quantidades de dados de cada vez).
+- **`c`**: Dispositivo de **caracteres** (oferecem dados de um caractere de cada vez).
+- **`d`**: Indica um **diretório**.
+- **`l`**: **Link simbólico**.
+- **`p`**: **FIFO** ou **Named Pipe**.
+- **`s`**: **Socket** mapeado em arquivo.
+Os próximos três caracteres (rwx) são as permissões do usuário
+Os três seguintes (r-x) são as permissões do grupo
+Os últimos três (r-x) são as permissões para outros
+
+## Notação Octal
+A notação octal usa números para representar as permissões. Cada permissão é representada por um dígito octal (0-7):
+
+- **rwx** = 7
+- **rw-** = 6
+- **r-x** = 5
+- **r--** = 4
+- **wx-** = 3
+- **w--** = 2
+- **x--** = 1
+- **---** = 0
+
+Então, por exemplo, o comando `chmod 755 arquivo.txt` define permissões como `rwxr-xr-x`:
+
+- **7** (rwx) para o proprietário
+- **5** (r-x) para o grupo
+- **5** (r-x) para outros
+
+## Notação Simbólica
+
+Na notação simbólica, você pode usar os seguintes componentes:
+
+- **`u`**: Representa o proprietário (User).
+- **`g`**: Representa o grupo (Group).
+- **`o`**: Representa outros usuários (Others).
+- **`a`**: Representa todos (User, Group e Others).
+
+As permissões são representadas por:
+
+- **`r`**: Leitura (Read)
+- **`w`**: Escrita (Write)
+- **`x`**: Execução (Execute)
+
+E os operadores para modificar permissões são:
+
+- **`+`**: Adiciona permissões
+- **`-`**: Remove permissões
+- **`=`**: Define permissões exatas, substituindo as permissões atuais
+
+### Exemplos de Comandos com Notação Simbólica
+| **Comando**                              | **Descrição**                                      |
+|------------------------------------------|----------------------------------------------------|
+| `chmod u+r arquivo.txt`                  | Adicionar permissão de leitura para o proprietário |
+| `chmod g-w arquivo.txt`                  | Remover permissão de escrita para o grupo          |
+| `chmod u=rwx,g=rx,o=r arquivo.txt`       | Definir permissões exatas para proprietário, grupo e outros |
+| `chmod a+x arquivo.txt`                  | Adicionar permissão de execução para todos         |
+| `chmod o= arquivo.txt`                   | Remover todas as permissões para outros            |
+| `chmod u=rwx,g=rx,o=rx arquivo.txt`      | Definir permissões de leitura e execução para todos, e de escrita apenas para o proprietário |
+| `chmod u+r,g-w,o= arquivo.txt`           | Combinar múltiplas modificações                     |
+
+### Tabela de Permissões Combinadas
+
+| **Permissão Simbólica** | **Octal** | **Binário** | **Descrição**                                                   |
+|--------------------------|-----------|-------------|-----------------------------------------------------------------|
+| `rwxr-xr-x`               | 755       | 111 101 101 | Total para proprietário, leitura e execução para grupo e outros |
+| `rw-r--r--`               | 644       | 110 100 100 | Leitura e escrita para proprietário, somente leitura para grupo e outros |
+| `rwx------`               | 700       | 111 000 000 | Total para proprietário, nenhum acesso para grupo e outros      |
+| `rwsr-xr-x`               | 4755      | 100 111 101 101 | Total para proprietário, leitura e execução para grupo e outros, com setuid ativado |
+
+## Permissões Especiais
 
 Além das permissões básicas, existem três bits especiais:
 
@@ -144,6 +214,19 @@ Então, no caso das permissões `-rwsr-xr-x`:
 - Isso se traduz em **4** (para `setuid`) + **7** (para `rwx`) = **4755** em octal.
 
 Portanto, a permissão octal `4755` representa o arquivo com o bit `setuid` ativado e as permissões `rwxr-xr-x`.
+
+## Umask
+A `umask` (ou máscara de criação de arquivos) define as permissões padrão que são removidas quando novos arquivos e diretórios são criados. A `umask` é subtraída das permissões padrão (666 para arquivos e 777 para diretórios) para determinar as permissões efetivas.
+
+- **Permissões padrão para arquivos**: `666` (rw-rw-rw-)
+- **Permissões padrão para diretórios**: `777` (rwxrwxrwx)
+
+#### Como funciona
+
+Se a `umask` é `022`, as permissões padrão são ajustadas da seguinte forma:
+
+- Para arquivos: `666 - 022 = 644` (rw-r--r--)
+- Para diretórios: `777 - 022 = 755` (rwxr-xr-x)
 
 [Voltar ao Sumário](#sumário)
 # Editores de Texto no Terminal
