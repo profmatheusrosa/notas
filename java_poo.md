@@ -40,7 +40,6 @@
    - [Executando arquivo pelo terminal](#executando-arquivo-pelo-terminal)  
    - [Arquivos do curso](#arquivos-do-curso)  
    - [Indicação de Livro](#indicação-de-livro)  
-   - [Comunidade de alunos da Hora de Codar](#comunidade-de-alunos-da-hora-de-codar)  
    - [Conclusão](#conclusão-introdução)  
 2. [Variáveis](#variáveis)  
    - [O Que São Variáveis?](#o-que-são-variáveis)  
@@ -301,3 +300,50 @@
     - [Apresentação e Conclusão do Curso](#apresentação-e-conclusão-do-curso)  
 
 ---
+
+```mermaid
+classDiagram
+    class Throwable {
+        <<abstract>>
+        +String getMessage()
+        +Throwable getCause()
+    }
+
+    class Error {
+        <<abstract>>
+        +String getMessage()
+        +Throwable getCause()
+    }
+
+    class Exception {
+        <<abstract>>
+        +String getMessage()
+        +Throwable getCause()
+    }
+
+    class RuntimeException {
+        +String getMessage()
+        +Throwable getCause()
+    }
+
+    class IOException {
+        +String getMessage()
+        +Throwable getCause()
+    }
+
+    class SQLException {
+        +String getMessage()
+        +Throwable getCause()
+    }
+
+    class NullPointerException {
+        +String getMessage()
+        +Throwable getCause()
+    }
+
+    Throwable <|-- Error
+    Throwable <|-- Exception
+    Exception <|-- RuntimeException
+    Exception <|-- IOException
+    Exception <|-- SQLException
+    RuntimeException <|-- NullPointerException
