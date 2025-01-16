@@ -27,6 +27,25 @@
 25. [Projeto Sistema de Vendas](#projeto-sistema-de-vendas)
 26. [Projeto Final](#projeto-final)
 
+```mermaid
+mindmap
+  root((Mapeamento de Ideias))
+    Desenvolvimento
+      Linguagens
+        Python
+        Java
+        JavaScript
+      Ferramentas
+        Git
+        Docker
+    Projetos
+      Projeto 1
+      Projeto 2
+    Aprendizado
+      Livros
+      Cursos
+
+
 ---
 
 1. [Introdução](#introdução)  
