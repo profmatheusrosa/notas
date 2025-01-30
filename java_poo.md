@@ -27,6 +27,42 @@
 25. [Projeto Sistema de Vendas](#projeto-sistema-de-vendas)
 26. [Projeto Final](#projeto-final)
 
+---
+
+**Plano de curso**
+
+| **Tópicos Principais**        | **Subtópicos**                      | **Detalhes**                                                   |
+|-------------------------------|--------------------------------------|----------------------------------------------------------------|
+| **1. Introdução à POO**       | 1.1 O que é POO                     | Definição, princípios e histórico da POO                      |
+|                               | 1.2 Java como Linguagem Orientada a Objetos | Características e vantagens do Java para POO                 |
+|                               | 1.3 Configuração do Ambiente        | Instalação do JDK, IDEs (Eclipse, IntelliJ, VS Code)          |
+| **2. Fundamentos de POO**     | 2.1 Classes e Objetos               | Estrutura de uma classe, criação e manipulação de objetos      |
+|                               | 2.2 Atributos e Métodos             | Declaração, uso e acesso aos membros de uma classe            |
+|                               | 2.3 Encapsulamento                  | Modificadores de acesso, getters e setters                    |
+|                               | 2.4 Construtores                   | Criação de construtores e sobrecarga                          |
+| **3. Princípios de POO**      | 3.1 Herança                        | Conceito, reutilização de código, superclasses e subclasses    |
+|                               | 3.2 Polimorfismo                   | Sobrescrita de métodos, uso de interfaces e classes abstratas  |
+|                               | 3.3 Abstração                      | Classes abstratas e interfaces                                |
+|                               | 3.4 Associação, Composição e Agregação | Relações entre classes                                         |
+| **4. Trabalhando com Coleções** | 4.1 Arrays vs Coleções             | Diferenças e quando usar cada um                               |
+|                               | 4.2 Introdução às Coleções Java     | List, Set, Map, e suas implementações (ArrayList, HashMap)     |
+|                               | 4.3 Iteração e Manipulação de Dados | Uso de loops e streams para trabalhar com coleções            |
+| **5. Manipulação de Exceções** | 5.1 Introdução às Exceções         | O que são, como ocorrem e tipos de exceções                   |
+|                               | 5.2 Tratamento de Exceções          | Blocos try-catch, finally e throw                             |
+|                               | 5.3 Exceções Personalizadas         | Criação e uso de exceções específicas para o projeto          |
+| **6. Práticas Avançadas de POO** | 6.1 Classes Internas e Anônimas   | Uso e aplicação                                                |
+|                               | 6.2 Generics                       | Tipagem genérica para coleções e métodos                      |
+|                               | 6.3 Lambdas e Streams              | Introdução à programação funcional em Java                    |
+| **7. Interfaces Gráficas**    | 7.1 Introdução ao Swing e AWT       | Componentes básicos, criação de janelas                       |
+|                               | 7.2 Eventos                        | Manipulação de eventos em interfaces gráficas                 |
+|                               | 7.3 Projetos Práticos              | Criação de pequenas aplicações com interfaces                 |
+| **8. Persistência de Dados**  | 8.1 Introdução ao JDBC             | Conexão com bancos de dados                                   |
+|                               | 8.2 Operações CRUD                 | Inserção, consulta, atualização e exclusão de dados           |
+|                               | 8.3 Padrão DAO                     | Organização do acesso aos dados                               |
+| **9. Projeto Final**          | 9.1 Definição de Problema           | Escolha do tema e requisitos                                  |
+|                               | 9.2 Desenvolvimento                | Implementação usando os conceitos aprendidos                  |
+|                               | 9.3 Apresentação                   | Demonstração da aplicação e relatório final   
+
 ```mermaid
 mindmap
   root((Mapeamento de Ideias))
@@ -44,7 +80,7 @@ mindmap
     Aprendizado
       Livros
       Cursos
-```
+
 
 ---
 
@@ -366,4 +402,3 @@ classDiagram
     Exception <|-- IOException
     Exception <|-- SQLException
     RuntimeException <|-- NullPointerException
-```
