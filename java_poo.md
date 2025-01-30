@@ -63,6 +63,7 @@
 |                               | 9.2 Desenvolvimento                | Implementação usando os conceitos aprendidos                  |
 |                               | 9.3 Apresentação                   | Demonstração da aplicação e relatório final   
 
+
 ```mermaid
 mindmap
   root((Mapeamento de Ideias))
